@@ -52,7 +52,7 @@ def do_scan(scan_task):
 
 results = list()
 for i in range(iterations):
-    dataset_ = ds.dataset("file:///mnt/cephfs/dataset", format=format_)
+    dataset_ = ds.dataset("dataset_new", format=format_)
     start = time.time()
     print(i, " start at: ", start)
     j = 0
