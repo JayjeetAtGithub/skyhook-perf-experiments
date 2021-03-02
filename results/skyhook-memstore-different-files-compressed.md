@@ -1,6 +1,6 @@
 # Parquet
 
-CPU (OSD): ~30-40%
+CPU (Client): ~30-40%
 
 ```
 ScanTask::Execute :  0.27175068855285645
