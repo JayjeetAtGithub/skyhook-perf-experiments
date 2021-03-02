@@ -1,5 +1,7 @@
 # Parquet
 
+CPU (OSD): ~30-40%
+
 ```
 ScanTask::Execute :  0.27175068855285645
 ScanTask::Execute :  0.2436821460723877
@@ -25,6 +27,8 @@ ScanTask::Execute :  0.20352673530578613
 ```
 
 # Rados Parquet
+
+CPU (OSD): ~50%
 
 Client Side Readings - 
 ```
