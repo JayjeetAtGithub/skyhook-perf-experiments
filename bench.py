@@ -9,13 +9,14 @@ import time
 import numpy as np
 import pandas
 
-if len(sys.argv) < 4:
-    print("usage: ./bench.py <format(pq/rqp)> <selectivity(1/10/100)> <iterations>")
+if len(sys.argv) < 5:
+    print("usage: ./bench.py <format(pq/rqp)> <selectivity(1/10/100)> <iterations> <dataset>")
     sys.exit(0)
 
 fmt = str(sys.argv[1])
 selectivity = str(sys.argv[2])
 iterations = int(sys.argv[3])
+directory = str(sys.argv[4])
 
 if fmt == "rpq":
     format_ = ds.RadosParquetFileFormat("/etc/ceph/ceph.conf", "cephfs_data")
@@ -54,7 +55,7 @@ def do_scan(scan_task):
 
 results = list()
 for i in range(iterations):
-    dataset_ = ds.dataset("dataset_ipc", format=format_)
+    dataset_ = ds.dataset(directory, format=format_)
     start = time.time()
     print(i, " start at: ", start)
     j = 0
