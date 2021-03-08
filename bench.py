@@ -19,8 +19,10 @@ iterations = int(sys.argv[3])
 
 if fmt == "rpq":
     format_ = ds.RadosParquetFileFormat("/etc/ceph/ceph.conf", "cephfs_data")
-else:
+elif fmt == "pq":
     format_ = "parquet"
+elif fmt == "ipc":
+    format_ = "ipc"
 print("Using format: ", format_)
 
 if selectivity == "0.01":
@@ -52,7 +54,7 @@ def do_scan(scan_task):
 
 results = list()
 for i in range(iterations):
-    dataset_ = ds.dataset("dataset_new", format=format_)
+    dataset_ = ds.dataset("dataset_ipc", format=format_)
     start = time.time()
     print(i, " start at: ", start)
     j = 0
