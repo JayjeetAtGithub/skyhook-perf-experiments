@@ -1,5 +1,7 @@
 Same number of Rows on Vanilla IPC and Vanilla Parquet ( 4.5 Million) 
 
+# `SELECT *`
+
 ## Ramdisk - Same number of Files (25) 
 4 MB files in Parquet and 30 MB files in IPC
 
