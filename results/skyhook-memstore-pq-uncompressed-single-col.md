@@ -1,4 +1,4 @@
-Parquet 
+# Parquet 
 
 ```
 Using format:  parquet
@@ -30,7 +30,7 @@ ScanTasks:  24
 0.43843889236450195
 ```
 
-Rados Parquet 
+# Rados Parquet 
 
 Client side readings - 
 ```
