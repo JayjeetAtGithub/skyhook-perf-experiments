@@ -1,5 +1,3 @@
-(venv) root@node0:/mnt/cephfs/skyhook-perf-experiments# python bench.py pq 100 3 ../dataset_128MB
-
 # Parquet
 ```
 Using format:  parquet
@@ -58,8 +56,6 @@ ScanTask::Execute :  7.864488840103149
 ScanTask::Execute :  6.9550769329071045
 ScanTask::Execute :  6.84912371635437
 ScanTask::Execute :  7.203065633773804
-
-
 ScanTask::Execute :  6.844306945800781
 ScanTask::Execute :  6.822472333908081
 ScanTasks:  7
@@ -70,8 +66,6 @@ Time:  50.49244403839111
 
 ScanTask::Execute :  7.860743284225464
 ScanTask::Execute :  7.702708959579468
-
-
 ScanTask::Execute :  7.445708990097046
 ScanTask::Execute :  6.816367864608765
 ScanTask::Execute :  6.718024730682373
@@ -84,8 +78,6 @@ Time:  50.290674448013306
 
 
 ScanTask::Execute :  7.0427446365356445
-
-
 ScanTask::Execute :  7.132610559463501
 ScanTask::Execute :  7.191133737564087
 ScanTask::Execute :  6.9524335861206055
