@@ -1,4 +1,7 @@
 (venv) root@node0:/mnt/cephfs/skyhook-perf-experiments# python bench.py pq 100 3 ../dataset_128MB
+
+# Parquet
+```
 Using format:  parquet
 ScanTask::Execute :  5.234658718109131
 ScanTask::Execute :  5.182530164718628
@@ -41,28 +44,12 @@ Time:  33.84384894371033
 
 Results:  [34.993104696273804, 34.35258650779724, 33.84384894371033]
 Avg. time:  34.39651338259379
-(venv) root@node0:/mnt/cephfs/skyhook-perf-experiments# python bench.py ^C 100 3 ../dataset_128MB
-(venv) root@node0:/mnt/cephfs/skyhook-perf-experiments# ^C
-(venv) root@node0:/mnt/cephfs/skyhook-perf-experiments# ^C
-(venv) root@node0:/mnt/cephfs/skyhook-perf-experiments# cd ..
-(venv) root@node0:/mnt/cephfs# ls
-dataset_128MB  skyhook-perf-experiments
-(venv) root@node0:/mnt/cephfs# cd data*
-(venv) root@node0:/mnt/cephfs/dataset_128MB# ls
-128MB.0.parquet  128MB.1.parquet  128MB.2.parquet  128MB.3.parquet  128MB.4.parquet  128MB.5.parquet  128MB.6.parquet
-(venv) root@node0:/mnt/cephfs/dataset_128MB# ls
-128MB.0.parquet  128MB.1.parquet  128MB.2.parquet  128MB.3.parquet  128MB.4.parquet  128MB.5.parquet  128MB.6.parquet
-(venv) root@node0:/mnt/cephfs/dataset_128MB# getfattr -n ceph.file.layout 32MB.1.parquet
-getfattr: 32MB.1.parquet: No such file or directory
-(venv) root@node0:/mnt/cephfs/dataset_128MB# getfattr -n ceph.file.layout 128MB.1.parquet
-# file: 128MB.1.parquet
-ceph.file.layout="stripe_unit=4194304 stripe_count=1 object_size=130023424 pool=cephfs_data"
+```
 
-(venv) root@node0:/mnt/cephfs/dataset_128MB# cd ..
-(venv) root@node0:/mnt/cephfs# cd sk*
-(venv) root@node0:/mnt/cephfs/skyhook-perf-experiments# ls
-bench.py  clean_cache.sh  dataset  results  writer.py
-(venv) root@node0:/mnt/cephfs/skyhook-perf-experiments# python bench.py rpq 100 3 ../dataset_128MB
+# Rados Parquet 
+
+Client side readings - 
+```
 Using format:  <pyarrow._rados.RadosParquetFileFormat object at 0x7f52d0afec70>
 
 
@@ -113,22 +100,11 @@ Time:  48.373427629470825
 
 Results:  [50.49244403839111, 50.290674448013306, 48.373427629470825]
 Avg. time:  49.71884870529175
-(venv) root@node0:/mnt/cephfs/skyhook-perf-experiments# 
-(venv) root@node0:/mnt/cephfs/skyhook-perf-experiments# 
-(venv) root@node0:/mnt/cephfs/skyhook-perf-experiments# 
+```
 
+Storage side readings - 
 
-
-
-
-
-
-
-
-
-
-
-
+```
 2021-03-09T04:52:20.539-0600 7f75438ea700  0 <cls> /mnt/data/arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:58: cls_cxx_read(): 0.016000 ms
 2021-03-09T04:52:21.951-0600 7f75438ea700  0 <cls> /mnt/data/arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:58: STEP 1: DeserializeScanRequest: 2.883000 ms
 2021-03-09T04:52:21.951-0600 7f75438ea700  0 <cls> /mnt/data/arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:58: cls_cxx_read(): 0.014000 ms
@@ -594,3 +570,4 @@ Avg. time:  49.71884870529175
 2021-03-09T04:55:11.182-0600 7f75428e8700  0 <cls> /mnt/data/arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:56: STEP 2: Scanner::ToTable(): 4612.550000 ms
 2021-03-09T04:55:11.182-0600 7f75428e8700  0 <cls> /mnt/data/arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:56: STEP 2: + Extra fragment creation: 4613.491000 ms
 2021-03-09T04:55:12.366-0600 7f75428e8700  0 <cls> /mnt/data/arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:58: STEP 3: SerializeTableToBufferlist: 1182.890000 ms
+```
