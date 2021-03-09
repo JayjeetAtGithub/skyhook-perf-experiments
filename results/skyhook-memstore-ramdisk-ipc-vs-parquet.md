@@ -1,6 +1,8 @@
-# Same number of Rows (4.5M) and Files (25) on Vanilla IPC and Vanilla Parquet on Ramdisk  , 4 MB files in Parquet and 30 MB files in IPC
+# RAMDisk
 
-## `SELECT *`
+## 4.5M  Rows, 25 Files on Vanilla IPC (4MB) and Vanilla Parquet (30MB)
+
+### `SELECT *`
 
 
 |format      | 100 | 10 | 1 |
@@ -16,16 +18,16 @@ parquet | 5.450993299484253 | 5.743615468343099 | 5.621794859568278 | 3.07356317
 ipc     | 4.222228606541951 | 4.840745290120442 | 4.6671074231465655 | 4.643389701843262 |
 -->
 
-## `SELECT total_amount`
+### `SELECT total_amount`
 
 |format      | 100 | 10 | 1 |
 |------------| --- | -- |---|
 parquet | 0.4132243792215983 | 0.5512352784474691 | 0.5150931676228842 |
 ipc     | 0.9835101763407389 | 1.2622448603312175 | 1.2660787105560303 |
 
-# 189 Ipc files, 25 parquet files, 4.5M rows, all 4MB on Ramdisk
+## 4.5M  Rows, 189 Files on Vanilla IPC (4MB) and 25 Files on Vanilla Parquet (4MB)
 
-## `SELECT *`
+### `SELECT *`
 
 
 |format      | 100 | 10 | 1 |
@@ -33,7 +35,7 @@ ipc     | 0.9835101763407389 | 1.2622448603312175 | 1.2660787105560303 |
 parquet | 5.207129081090291 | 4.990869124730428 | 4.926516532897949 |
 ipc     | 1.765239953994751 | 3.1631642977396646 | 2.9799612363179526 |
 
-## `SELECT total_amount`
+### `SELECT total_amount`
 
 |format      | 100 | 10 | 1 |
 |------------| --- | -- |---|
