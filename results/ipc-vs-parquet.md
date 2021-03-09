@@ -1,6 +1,6 @@
 # RAMDisk
 
-## 4.5M  Rows, 25 Files on Vanilla IPC (4MB) and Vanilla Parquet (30MB)
+## 4.5M  Rows, 25 Files on Vanilla IPC (30MB) and Vanilla Parquet (4MB)
 
 ### `SELECT *`
 
