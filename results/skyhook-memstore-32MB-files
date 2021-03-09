@@ -1,0 +1,199 @@
+# Parquet
+```
+Using format:  parquet
+ScanTask::Execute :  1.5455541610717773
+ScanTask::Execute :  1.5836632251739502
+ScanTask::Execute :  1.487727403640747
+ScanTask::Execute :  1.5112838745117188
+ScanTask::Execute :  1.3537156581878662
+ScanTask::Execute :  1.3770320415496826
+ScanTask::Execute :  1.4151415824890137
+ScanTask::Execute :  1.4554922580718994
+ScanTask::Execute :  1.4046244621276855
+ScanTask::Execute :  1.4407057762145996
+ScanTask::Execute :  1.3416879177093506
+ScanTask::Execute :  1.3776473999023438
+ScanTask::Execute :  1.427664041519165
+ScanTask::Execute :  1.4674770832061768
+ScanTask::Execute :  1.4437592029571533
+ScanTask::Execute :  1.5082485675811768
+ScanTask::Execute :  1.4434845447540283
+ScanTask::Execute :  1.4667503833770752
+ScanTask::Execute :  1.3631837368011475
+ScanTask::Execute :  1.4141080379486084
+ScanTask::Execute :  1.4012227058410645
+ScanTask::Execute :  1.4394636154174805
+ScanTask::Execute :  1.4401094913482666
+ScanTask::Execute :  1.4634912014007568
+ScanTasks:  12
+34.573238372802734
+
+
+
+
+ScanTask::Execute :  1.3589046001434326
+ScanTask::Execute :  1.3823204040527344
+ScanTask::Execute :  1.3421447277069092
+ScanTask::Execute :  1.3682036399841309
+ScanTask::Execute :  1.4190196990966797
+ScanTask::Execute :  1.4697797298431396
+ScanTask::Execute :  1.3295824527740479
+ScanTask::Execute :  1.3529438972473145
+ScanTask::Execute :  1.3548839092254639
+ScanTask::Execute :  1.3783636093139648
+ScanTask::Execute :  1.3418021202087402
+ScanTask::Execute :  1.3651697635650635
+ScanTask::Execute :  1.3462584018707275
+ScanTask::Execute :  1.3747756481170654
+ScanTask::Execute :  1.351146936416626
+ScanTask::Execute :  1.3745455741882324
+ScanTask::Execute :  1.3372361660003662
+ScanTask::Execute :  1.3661000728607178
+ScanTask::Execute :  1.3408420085906982
+ScanTask::Execute :  1.364255666732788
+ScanTask::Execute :  1.354003667831421
+ScanTask::Execute :  1.3857176303863525
+ScanTask::Execute :  1.3754675388336182
+ScanTask::Execute :  1.3988580703735352
+ScanTasks:  12
+32.83232593536377
+
+
+
+
+ScanTask::Execute :  1.351900339126587
+ScanTask::Execute :  1.3803699016571045
+ScanTask::Execute :  1.3266103267669678
+ScanTask::Execute :  1.3496873378753662
+ScanTask::Execute :  1.3078701496124268
+ScanTask::Execute :  1.330920696258545
+ScanTask::Execute :  1.3444275856018066
+ScanTask::Execute :  1.3805029392242432
+ScanTask::Execute :  1.34205961227417
+ScanTask::Execute :  1.3651812076568604
+ScanTask::Execute :  1.3577957153320312
+ScanTask::Execute :  1.3808259963989258
+ScanTask::Execute :  1.323455810546875
+ScanTask::Execute :  1.3465559482574463
+ScanTask::Execute :  1.324782371520996
+ScanTask::Execute :  1.3478071689605713
+ScanTask::Execute :  1.3600802421569824
+ScanTask::Execute :  1.383439302444458
+ScanTask::Execute :  1.4667506217956543
+ScanTask::Execute :  1.5008151531219482
+ScanTask::Execute :  1.3729033470153809
+ScanTask::Execute :  1.3962926864624023
+ScanTask::Execute :  1.345771074295044
+ScanTask::Execute :  1.368781328201294
+ScanTasks:  12
+32.75558686256409
+
+
+
+
+results:  [34.573238372802734, 32.83232593536377, 32.75558686256409]
+time:  33.38705039024353
+```
+
+# Rados Parquet
+
+Client side readings - 
+```
+Using format:  <pyarrow._rados.RadosParquetFileFormat object at 0x7f4c1ad9c7b0>
+ScanTask::Execute :  2.1279513835906982
+ScanTask::Execute :  2.1281607151031494
+ScanTask::Execute :  2.0407512187957764
+ScanTask::Execute :  2.040954828262329
+ScanTask::Execute :  1.8522469997406006
+ScanTask::Execute :  1.8524529933929443
+ScanTask::Execute :  1.855393409729004
+ScanTask::Execute :  1.8555974960327148
+ScanTask::Execute :  2.05843448638916
+ScanTask::Execute :  2.0588748455047607
+ScanTask::Execute :  1.850886344909668
+ScanTask::Execute :  1.851083755493164
+ScanTask::Execute :  1.8573145866394043
+ScanTask::Execute :  1.8575146198272705
+ScanTask::Execute :  1.86311674118042
+ScanTask::Execute :  1.863309383392334
+ScanTask::Execute :  1.8485026359558105
+ScanTask::Execute :  1.8487038612365723
+ScanTask::Execute :  1.860360860824585
+ScanTask::Execute :  1.8605520725250244
+ScanTask::Execute :  1.861469030380249
+ScanTask::Execute :  1.8616673946380615
+ScanTask::Execute :  1.8664193153381348
+ScanTask::Execute :  1.8666160106658936
+ScanTasks:  12
+45.88833498954773
+
+
+
+
+ScanTask::Execute :  1.8644826412200928
+ScanTask::Execute :  1.8646833896636963
+ScanTask::Execute :  1.9888639450073242
+ScanTask::Execute :  1.9890556335449219
+ScanTask::Execute :  1.8801829814910889
+ScanTask::Execute :  1.8803751468658447
+ScanTask::Execute :  1.863779067993164
+ScanTask::Execute :  1.8639698028564453
+ScanTask::Execute :  1.918654203414917
+ScanTask::Execute :  1.918853759765625
+ScanTask::Execute :  1.8732657432556152
+ScanTask::Execute :  1.8734724521636963
+ScanTask::Execute :  1.856374740600586
+ScanTask::Execute :  1.856572151184082
+ScanTask::Execute :  1.8902571201324463
+ScanTask::Execute :  1.8904569149017334
+ScanTask::Execute :  1.854602575302124
+ScanTask::Execute :  1.8547940254211426
+ScanTask::Execute :  1.9082543849945068
+ScanTask::Execute :  1.9084453582763672
+ScanTask::Execute :  1.8663456439971924
+ScanTask::Execute :  1.8665380477905273
+ScanTask::Execute :  1.8443610668182373
+ScanTask::Execute :  1.8445584774017334
+ScanTasks:  12
+45.22119927406311
+
+
+
+
+ScanTask::Execute :  1.8303093910217285
+ScanTask::Execute :  1.830531358718872
+ScanTask::Execute :  1.9427416324615479
+ScanTask::Execute :  1.9429376125335693
+ScanTask::Execute :  1.8627007007598877
+ScanTask::Execute :  1.8628959655761719
+ScanTask::Execute :  1.8367750644683838
+ScanTask::Execute :  1.8369672298431396
+ScanTask::Execute :  1.8538968563079834
+ScanTask::Execute :  1.854095458984375
+ScanTask::Execute :  1.852726697921753
+ScanTask::Execute :  1.8530969619750977
+ScanTask::Execute :  1.850919246673584
+ScanTask::Execute :  1.851118803024292
+ScanTask::Execute :  1.9621965885162354
+ScanTask::Execute :  1.962393045425415
+ScanTask::Execute :  1.831777811050415
+ScanTask::Execute :  1.8319687843322754
+ScanTask::Execute :  1.8501532077789307
+ScanTask::Execute :  1.8503427505493164
+ScanTask::Execute :  1.8834850788116455
+ScanTask::Execute :  1.883681058883667
+ScanTask::Execute :  1.8933119773864746
+ScanTask::Execute :  1.8935868740081787
+ScanTasks:  12
+44.90461015701294
+
+
+
+
+results:  [45.88833498954773, 45.22119927406311, 44.90461015701294]
+time:  45.338048140207924
+```
+
+Storage side readings - 
+```
+```
