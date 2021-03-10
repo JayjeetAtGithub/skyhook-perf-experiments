@@ -712,8 +712,192 @@ time:  1.532514492670695
 Storage readings - 
 
 ```
+2021-03-10T05:57:32.192-0600 7f65a5c9b700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: Scanner::ToTable(): 14.353000 ms
+2021-03-10T05:57:32.192-0600 7f65a5c9b700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: + Extra fragment creation: 15.166000 ms
+2021-03-10T05:57:32.256-0600 7f65a5c9b700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 3: SerializeTableToBufferlist: 66.620000 ms
+2021-03-10T05:57:33.416-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 1: DeserializeScanRequest: 2.400000 ms
+2021-03-10T05:57:33.416-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.013000 ms
+2021-03-10T05:57:33.416-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.003000 ms
+2021-03-10T05:57:33.420-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.005000 ms
+2021-03-10T05:57:33.420-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.002000 ms
+2021-03-10T05:57:33.420-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.005000 ms
+2021-03-10T05:57:33.420-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.002000 ms
+2021-03-10T05:57:33.432-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: Scanner::ToTable(): 13.869000 ms
+2021-03-10T05:57:33.432-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: + Extra fragment creation: 14.626000 ms
+2021-03-10T05:57:33.512-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 3: SerializeTableToBufferlist: 79.127000 ms
+2021-03-10T05:57:34.688-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 1: DeserializeScanRequest: 2.547000 ms
+2021-03-10T05:57:34.688-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.012000 ms
+2021-03-10T05:57:34.688-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.002000 ms
+2021-03-10T05:57:34.688-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.004000 ms
+2021-03-10T05:57:34.688-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.001000 ms
+2021-03-10T05:57:34.688-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.006000 ms
+2021-03-10T05:57:34.688-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.004000 ms
+2021-03-10T05:57:34.700-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: Scanner::ToTable(): 13.605000 ms
+2021-03-10T05:57:34.700-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: + Extra fragment creation: 14.400000 ms
+2021-03-10T05:57:34.764-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 3: SerializeTableToBufferlist: 64.169000 ms
+2021-03-10T05:57:35.984-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 1: DeserializeScanRequest: 2.546000 ms
+2021-03-10T05:57:35.984-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.012000 ms
+2021-03-10T05:57:35.984-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.003000 ms
+2021-03-10T05:57:35.984-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.004000 ms
+2021-03-10T05:57:35.984-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.002000 ms
+2021-03-10T05:57:35.984-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.006000 ms
+2021-03-10T05:57:35.988-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.005000 ms
+2021-03-10T05:57:36.000-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: Scanner::ToTable(): 14.129000 ms
+2021-03-10T05:57:36.000-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: + Extra fragment creation: 14.973000 ms
+2021-03-10T05:57:36.080-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 3: SerializeTableToBufferlist: 80.882000 ms
+2021-03-10T05:57:37.288-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 1: DeserializeScanRequest: 2.549000 ms
+2021-03-10T05:57:37.288-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.012000 ms
+2021-03-10T05:57:37.288-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.002000 ms
+2021-03-10T05:57:37.288-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.004000 ms
+2021-03-10T05:57:37.288-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.002000 ms
+2021-03-10T05:57:37.288-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.005000 ms
+2021-03-10T05:57:37.288-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.003000 ms
+2021-03-10T05:57:37.304-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: Scanner::ToTable(): 14.119000 ms
+2021-03-10T05:57:37.304-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: + Extra fragment creation: 14.904000 ms
+2021-03-10T05:57:37.368-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 3: SerializeTableToBufferlist: 65.789000 ms
+2021-03-10T05:57:38.528-0600 7f65a7c9f700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 1: DeserializeScanRequest: 2.551000 ms
+2021-03-10T05:57:38.528-0600 7f65a7c9f700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.013000 ms
+2021-03-10T05:57:38.528-0600 7f65a7c9f700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.003000 ms
+2021-03-10T05:57:38.528-0600 7f65a7c9f700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.004000 ms
+2021-03-10T05:57:38.528-0600 7f65a7c9f700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.002000 ms
+2021-03-10T05:57:38.532-0600 7f65a7c9f700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.005000 ms
+2021-03-10T05:57:38.532-0600 7f65a7c9f700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.003000 ms
+2021-03-10T05:57:38.544-0600 7f65a7c9f700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: Scanner::ToTable(): 14.080000 ms
+2021-03-10T05:57:38.544-0600 7f65a7c9f700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: + Extra fragment creation: 14.882000 ms
+2021-03-10T05:57:38.608-0600 7f65a7c9f700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 3: SerializeTableToBufferlist: 65.707000 ms
+2021-03-10T05:57:39.848-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 1: DeserializeScanRequest: 2.542000 ms
+2021-03-10T05:57:39.848-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.012000 ms
+2021-03-10T05:57:39.848-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.003000 ms
+2021-03-10T05:57:39.852-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.005000 ms
+2021-03-10T05:57:39.852-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.002000 ms
+2021-03-10T05:57:39.852-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.006000 ms
+2021-03-10T05:57:39.852-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.003000 ms
+2021-03-10T05:57:39.864-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: Scanner::ToTable(): 13.592000 ms
+2021-03-10T05:57:39.864-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: + Extra fragment creation: 14.392000 ms
+2021-03-10T05:57:39.928-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 3: SerializeTableToBufferlist: 64.821000 ms
+2021-03-10T05:57:41.140-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 1: DeserializeScanRequest: 2.511000 ms
+2021-03-10T05:57:41.144-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.013000 ms
+2021-03-10T05:57:41.144-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.003000 ms
+2021-03-10T05:57:41.144-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.005000 ms
+2021-03-10T05:57:41.144-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.002000 ms
+2021-03-10T05:57:41.144-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.005000 ms
+2021-03-10T05:57:41.144-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.003000 ms
+2021-03-10T05:57:41.156-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: Scanner::ToTable(): 14.816000 ms
+2021-03-10T05:57:41.156-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: + Extra fragment creation: 15.645000 ms
+2021-03-10T05:57:41.224-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 3: SerializeTableToBufferlist: 67.345000 ms
+2021-03-10T05:57:41.288-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.011000 ms
+2021-03-10T05:57:41.288-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.003000 ms
+2021-03-10T05:57:42.428-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 1: DeserializeScanRequest: 2.503000 ms
+2021-03-10T05:57:42.428-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.012000 ms
+2021-03-10T05:57:42.428-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.003000 ms
+2021-03-10T05:57:42.432-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.005000 ms
+2021-03-10T05:57:42.432-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.002000 ms
+2021-03-10T05:57:42.432-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.005000 ms
+2021-03-10T05:57:42.432-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.003000 ms
+2021-03-10T05:57:42.444-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: Scanner::ToTable(): 13.786000 ms
+2021-03-10T05:57:42.444-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: + Extra fragment creation: 14.580000 ms
+2021-03-10T05:57:42.520-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 3: SerializeTableToBufferlist: 75.806000 ms
+2021-03-10T05:57:43.736-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 1: DeserializeScanRequest: 2.503000 ms
+2021-03-10T05:57:43.736-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.012000 ms
+2021-03-10T05:57:43.736-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.003000 ms
+2021-03-10T05:57:43.740-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.005000 ms
+2021-03-10T05:57:43.740-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.002000 ms
+2021-03-10T05:57:43.740-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.005000 ms
+2021-03-10T05:57:43.740-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.003000 ms
+2021-03-10T05:57:43.752-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: Scanner::ToTable(): 13.778000 ms
+2021-03-10T05:57:43.752-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: + Extra fragment creation: 14.562000 ms
+2021-03-10T05:57:43.812-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 3: SerializeTableToBufferlist: 62.185000 ms
+2021-03-10T05:57:44.988-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 1: DeserializeScanRequest: 2.495000 ms
+2021-03-10T05:57:44.988-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.013000 ms
+2021-03-10T05:57:44.992-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.003000 ms
+2021-03-10T05:57:44.992-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.005000 ms
+2021-03-10T05:57:44.992-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.002000 ms
+2021-03-10T05:57:44.992-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.005000 ms
+2021-03-10T05:57:44.992-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.003000 ms
+2021-03-10T05:57:45.004-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: Scanner::ToTable(): 13.696000 ms
+2021-03-10T05:57:45.004-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: + Extra fragment creation: 14.493000 ms
+2021-03-10T05:57:45.068-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 3: SerializeTableToBufferlist: 65.380000 ms
+2021-03-10T05:57:46.408-0600 7f65a5c9b700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 1: DeserializeScanRequest: 2.698000 ms
+2021-03-10T05:57:46.408-0600 7f65a5c9b700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.011000 ms
+2021-03-10T05:57:46.408-0600 7f65a5c9b700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.002000 ms
+2021-03-10T05:57:46.408-0600 7f65a5c9b700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.005000 ms
+2021-03-10T05:57:46.408-0600 7f65a5c9b700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.002000 ms
+2021-03-10T05:57:46.408-0600 7f65a5c9b700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.005000 ms
+2021-03-10T05:57:46.408-0600 7f65a5c9b700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.004000 ms
+2021-03-10T05:57:46.424-0600 7f65a5c9b700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: Scanner::ToTable(): 14.090000 ms
+2021-03-10T05:57:46.424-0600 7f65a5c9b700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: + Extra fragment creation: 14.884000 ms
+2021-03-10T05:57:46.488-0600 7f65a5c9b700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 3: SerializeTableToBufferlist: 65.235000 ms
+2021-03-10T05:57:47.724-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 1: DeserializeScanRequest: 2.546000 ms
+2021-03-10T05:57:47.724-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.013000 ms
+2021-03-10T05:57:47.724-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.002000 ms
+2021-03-10T05:57:47.724-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.004000 ms
+2021-03-10T05:57:47.724-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.002000 ms
+2021-03-10T05:57:47.724-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.005000 ms
+2021-03-10T05:57:47.724-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.004000 ms
+2021-03-10T05:57:47.736-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: Scanner::ToTable(): 13.787000 ms
+2021-03-10T05:57:47.736-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: + Extra fragment creation: 14.585000 ms
+2021-03-10T05:57:47.820-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 3: SerializeTableToBufferlist: 81.766000 ms
+2021-03-10T05:57:49.076-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 1: DeserializeScanRequest: 2.499000 ms
+2021-03-10T05:57:49.080-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.013000 ms
+2021-03-10T05:57:49.080-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.002000 ms
+2021-03-10T05:57:49.080-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.004000 ms
+2021-03-10T05:57:49.080-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.002000 ms
+2021-03-10T05:57:49.080-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.005000 ms
+2021-03-10T05:57:49.080-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.003000 ms
+2021-03-10T05:57:49.092-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: Scanner::ToTable(): 14.315000 ms
+2021-03-10T05:57:49.092-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: + Extra fragment creation: 15.140000 ms
+2021-03-10T05:57:49.160-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 3: SerializeTableToBufferlist: 65.973000 ms
+2021-03-10T05:57:50.388-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 1: DeserializeScanRequest: 2.579000 ms
+2021-03-10T05:57:50.388-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.012000 ms
+2021-03-10T05:57:50.388-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.002000 ms
+2021-03-10T05:57:50.388-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.005000 ms
+2021-03-10T05:57:50.388-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.001000 ms
+2021-03-10T05:57:50.388-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.005000 ms
+2021-03-10T05:57:50.388-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.003000 ms
+2021-03-10T05:57:50.400-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: Scanner::ToTable(): 13.806000 ms
+2021-03-10T05:57:50.400-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: + Extra fragment creation: 14.607000 ms
+2021-03-10T05:57:50.480-0600 7f65a6c9d700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 3: SerializeTableToBufferlist: 79.692000 ms
+2021-03-10T05:57:51.721-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 1: DeserializeScanRequest: 2.594000 ms
+2021-03-10T05:57:51.721-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.012000 ms
+2021-03-10T05:57:51.721-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.002000 ms
+2021-03-10T05:57:51.721-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.005000 ms
+2021-03-10T05:57:51.721-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.002000 ms
+2021-03-10T05:57:51.725-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.005000 ms
+2021-03-10T05:57:51.725-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.003000 ms
+2021-03-10T05:57:51.741-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: Scanner::ToTable(): 14.052000 ms
+2021-03-10T05:57:51.741-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: + Extra fragment creation: 14.850000 ms
+2021-03-10T05:57:51.801-0600 7f65a749e700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 3: SerializeTableToBufferlist: 65.510000 ms
+2021-03-10T05:57:52.957-0600 7f65a7c9f700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 1: DeserializeScanRequest: 2.516000 ms
+2021-03-10T05:57:52.957-0600 7f65a7c9f700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.013000 ms
+2021-03-10T05:57:52.957-0600 7f65a7c9f700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.003000 ms
+2021-03-10T05:57:52.957-0600 7f65a7c9f700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.005000 ms
+2021-03-10T05:57:52.957-0600 7f65a7c9f700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.002000 ms
+2021-03-10T05:57:52.957-0600 7f65a7c9f700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.005000 ms
+2021-03-10T05:57:52.957-0600 7f65a7c9f700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.003000 ms
+2021-03-10T05:57:52.969-0600 7f65a7c9f700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: Scanner::ToTable(): 14.050000 ms
+2021-03-10T05:57:52.969-0600 7f65a7c9f700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: + Extra fragment creation: 14.839000 ms
+2021-03-10T05:57:53.033-0600 7f65a7c9f700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 3: SerializeTableToBufferlist: 61.385000 ms
+2021-03-10T05:57:54.209-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 1: DeserializeScanRequest: 2.536000 ms
+2021-03-10T05:57:54.209-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.012000 ms
+2021-03-10T05:57:54.209-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.003000 ms
+2021-03-10T05:57:54.209-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.005000 ms
+2021-03-10T05:57:54.209-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.002000 ms
+2021-03-10T05:57:54.209-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.005000 ms
+2021-03-10T05:57:54.209-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.003000 ms
+2021-03-10T05:57:54.225-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: Scanner::ToTable(): 14.435000 ms
+2021-03-10T05:57:54.225-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: + Extra fragment creation: 15.237000 ms
+2021-03-10T05:57:54.289-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 3: SerializeTableToBufferlist: 64.376000 ms
+2021-03-10T05:57:55.545-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 1: DeserializeScanRequest: 2.514000 ms
+2021-03-10T05:57:55.549-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.014000 ms
+2021-03-10T05:57:55.549-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.002000 ms
+2021-03-10T05:57:55.549-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.005000 ms
+2021-03-10T05:57:55.549-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.002000 ms
+2021-03-10T05:57:55.549-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.006000 ms
+2021-03-10T05:57:55.549-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: cls_cxx_read(): 0.003000 ms
+2021-03-10T05:57:55.561-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: Scanner::ToTable(): 14.217000 ms
+2021-03-10T05:57:55.561-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:57: STEP 2: + Extra fragment creation: 15.051000 ms
+2021-03-10T05:57:55.629-0600 7f65a649c700  0 <cls> /mnt/data/arrow_arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:59: STEP 3: SerializeTableToBufferlist: 65.456000 ms
 ```
-
 
 
 # Single Column - Vanilla Parquet vs Vanilla IPC
