@@ -610,36 +610,60 @@ storage -
 
 ```
 Using format:  ipc
-ScanTask::Execute :  0.10867834091186523
-ScanTask::Execute :  0.08141684532165527
-ScanTask::Execute :  0.07937932014465332
-ScanTask::Execute :  0.0940861701965332
-ScanTask::Execute :  0.0880272388458252
-ScanTask::Execute :  0.10773253440856934
-ScanTask::Execute :  0.07997250556945801
-ScanTask::Execute :  0.07915878295898438
-ScanTask::Execute :  0.08509492874145508
-ScanTask::Execute :  0.08533024787902832
-ScanTask::Execute :  0.09501028060913086
-ScanTask::Execute :  0.07858729362487793
-ScanTask::Execute :  0.08488106727600098
-ScanTask::Execute :  0.08093094825744629
-ScanTask::Execute :  0.07878470420837402
-ScanTask::Execute :  0.08052802085876465
-ScanTask::Execute :  0.08909320831298828
-ScanTask::Execute :  0.08613753318786621
-ScanTask::Execute :  0.07716989517211914
-ScanTask::Execute :  0.08752155303955078
-ScanTask::Execute :  0.08016180992126465
-ScanTask::Execute :  0.06243586540222168
-ScanTask::Execute :  0.08640170097351074
-ScanTask::Execute :  0.08704924583435059
-ScanTasks:  24
-2.043570041656494
+ScanTask::Execute :  0.12072110176086426
+ScanTask::Execute :  0.12005376815795898
+ScanTask::Execute :  0.10921287536621094
+ScanTask::Execute :  0.11457538604736328
+ScanTask::Execute :  0.12972450256347656
+ScanTask::Execute :  0.12062788009643555
+ScanTask::Execute :  0.11273193359375
+ScanTask::Execute :  0.11274862289428711
+ScanTask::Execute :  0.10648608207702637
+ScanTask::Execute :  0.09031391143798828
+ScanTask::Execute :  0.09651756286621094
+ScanTasks:  11
+1.2337136268615723
 
 
-results:  [2.043570041656494]
-time:  2.043570041656494
+
+
+ScanTask::Execute :  0.08273816108703613
+ScanTask::Execute :  0.0844419002532959
+ScanTask::Execute :  0.09230256080627441
+ScanTask::Execute :  0.08278393745422363
+ScanTask::Execute :  0.08874201774597168
+ScanTask::Execute :  0.08442473411560059
+ScanTask::Execute :  0.08420920372009277
+ScanTask::Execute :  0.08208703994750977
+ScanTask::Execute :  0.08095860481262207
+ScanTask::Execute :  0.0821847915649414
+ScanTask::Execute :  0.09209084510803223
+ScanTasks:  11
+0.9369637966156006
+
+
+
+
+ScanTask::Execute :  0.08650517463684082
+ScanTask::Execute :  0.09174156188964844
+ScanTask::Execute :  0.09786796569824219
+ScanTask::Execute :  0.11093640327453613
+ScanTask::Execute :  0.10333609580993652
+ScanTask::Execute :  0.09966135025024414
+ScanTask::Execute :  0.1092989444732666
+ScanTask::Execute :  0.1071321964263916
+ScanTask::Execute :  0.09826016426086426
+ScanTask::Execute :  0.09879684448242188
+ScanTask::Execute :  0.1002340316772461
+ScanTasks:  11
+1.1037707328796387
+
+
+
+
+results:  [1.2337136268615723, 0.9369637966156006, 1.1037707328796387]
+time:  1.0914827187856038
+
 ```
 
 
