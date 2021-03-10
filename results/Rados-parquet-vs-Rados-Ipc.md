@@ -644,3 +644,81 @@ time:  2.043570041656494
 
 
 # Rados IPC
+
+
+
+
+
+
+# Single Column - Vanilla Parquet vs Vanilla IPC
+```
+Using format:  parquet
+ScanTask::Execute :  0.055468082427978516
+ScanTask::Execute :  0.016739845275878906
+ScanTask::Execute :  0.017619609832763672
+ScanTask::Execute :  0.01464986801147461
+ScanTask::Execute :  0.01639270782470703
+ScanTask::Execute :  0.017821788787841797
+ScanTask::Execute :  0.0167543888092041
+ScanTask::Execute :  0.017511367797851562
+ScanTask::Execute :  0.01662445068359375
+ScanTask::Execute :  0.015661239624023438
+ScanTask::Execute :  0.016527891159057617
+ScanTask::Execute :  0.015325784683227539
+ScanTask::Execute :  0.01645374298095703
+ScanTask::Execute :  0.01716017723083496
+ScanTask::Execute :  0.018159151077270508
+ScanTask::Execute :  0.018517494201660156
+ScanTask::Execute :  0.01595306396484375
+ScanTask::Execute :  0.015826940536499023
+ScanTask::Execute :  0.017079830169677734
+ScanTask::Execute :  0.0169064998626709
+ScanTask::Execute :  0.01702094078063965
+ScanTask::Execute :  0.01752448081970215
+ScanTask::Execute :  0.016067981719970703
+ScanTask::Execute :  0.01609063148498535
+ScanTasks:  24
+0.43985795974731445
+
+
+
+
+results:  [0.43985795974731445]
+time:  0.43985795974731445
+```
+
+```
+Using format:  ipc
+ScanTask::Execute :  0.10328030586242676
+ScanTask::Execute :  0.0963599681854248
+ScanTask::Execute :  0.08520722389221191
+ScanTask::Execute :  0.09047079086303711
+ScanTask::Execute :  0.08698129653930664
+ScanTask::Execute :  0.09768033027648926
+ScanTask::Execute :  0.08299660682678223
+ScanTask::Execute :  0.08713269233703613
+ScanTask::Execute :  0.08719730377197266
+ScanTask::Execute :  0.08980679512023926
+ScanTask::Execute :  0.086761474609375
+ScanTask::Execute :  0.08104443550109863
+ScanTask::Execute :  0.08283877372741699
+ScanTask::Execute :  0.07844924926757812
+ScanTask::Execute :  0.08845186233520508
+ScanTask::Execute :  0.08614993095397949
+ScanTask::Execute :  0.0874631404876709
+ScanTask::Execute :  0.08558964729309082
+ScanTask::Execute :  0.08582258224487305
+ScanTask::Execute :  0.08711504936218262
+ScanTask::Execute :  0.08014845848083496
+ScanTask::Execute :  0.058454036712646484
+ScanTask::Execute :  0.08009624481201172
+ScanTask::Execute :  0.08864426612854004
+ScanTasks:  24
+2.0641424655914307
+
+
+
+
+results:  [2.0641424655914307]
+time:  2.0641424655914307
+```
