@@ -566,3 +566,42 @@ storage -
 2021-03-10T01:38:45.189-0600 7f75428e8700  0 <cls> /mnt/data/arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:56: STEP 2: + Extra fragment creation: 206.064000 ms
 2021-03-10T01:38:45.217-0600 7f75428e8700  0 <cls> /mnt/data/arrow/cpp/src/arrow/adapters/arrow-rados-cls/cls_arrow.cc:58: STEP 3: SerializeTableToBufferlist: 27.986000 ms
 ```
+
+# Vanilla IPC
+
+```
+Using format:  ipc
+ScanTask::Execute :  0.10867834091186523
+ScanTask::Execute :  0.08141684532165527
+ScanTask::Execute :  0.07937932014465332
+ScanTask::Execute :  0.0940861701965332
+ScanTask::Execute :  0.0880272388458252
+ScanTask::Execute :  0.10773253440856934
+ScanTask::Execute :  0.07997250556945801
+ScanTask::Execute :  0.07915878295898438
+ScanTask::Execute :  0.08509492874145508
+ScanTask::Execute :  0.08533024787902832
+ScanTask::Execute :  0.09501028060913086
+ScanTask::Execute :  0.07858729362487793
+ScanTask::Execute :  0.08488106727600098
+ScanTask::Execute :  0.08093094825744629
+ScanTask::Execute :  0.07878470420837402
+ScanTask::Execute :  0.08052802085876465
+ScanTask::Execute :  0.08909320831298828
+ScanTask::Execute :  0.08613753318786621
+ScanTask::Execute :  0.07716989517211914
+ScanTask::Execute :  0.08752155303955078
+ScanTask::Execute :  0.08016180992126465
+ScanTask::Execute :  0.06243586540222168
+ScanTask::Execute :  0.08640170097351074
+ScanTask::Execute :  0.08704924583435059
+ScanTasks:  24
+2.043570041656494
+
+
+results:  [2.043570041656494]
+time:  2.043570041656494
+```
+
+
+# Rados IPC
