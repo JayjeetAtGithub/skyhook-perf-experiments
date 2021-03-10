@@ -645,8 +645,74 @@ time:  2.043570041656494
 
 # Rados IPC
 
+Client readings - 
+
+```
+Using format:  <pyarrow._rados.RadosParquetFileFormat object at 0x7fcca48f0630>
 
 
+
+ScanTask::Execute :  0.1929311752319336
+ScanTask::Execute :  0.1261897087097168
+ScanTask::Execute :  0.14569854736328125
+ScanTask::Execute :  0.1307511329650879
+ScanTask::Execute :  0.14203190803527832
+ScanTask::Execute :  0.13105559349060059
+ScanTask::Execute :  0.1355133056640625
+ScanTask::Execute :  0.1292414665222168
+ScanTask::Execute :  0.13059735298156738
+ScanTask::Execute :  0.12829184532165527
+ScanTask::Execute :  0.12301802635192871
+ScanTasks:  11
+1.515320062637329
+
+
+
+
+ScanTask::Execute :  0.14330625534057617
+ScanTask::Execute :  0.1302051544189453
+ScanTask::Execute :  0.12957096099853516
+ScanTask::Execute :  0.12386345863342285
+ScanTask::Execute :  0.1433391571044922
+ScanTask::Execute :  0.13782382011413574
+ScanTask::Execute :  0.15416264533996582
+ScanTask::Execute :  0.13792729377746582
+ScanTask::Execute :  0.1411123275756836
+ScanTask::Execute :  0.13822507858276367
+ScanTask::Execute :  0.13295340538024902
+ScanTasks:  11
+1.5124895572662354
+
+
+
+
+ScanTask::Execute :  0.1552262306213379
+ScanTask::Execute :  0.1394202709197998
+ScanTask::Execute :  0.1376051902770996
+ScanTask::Execute :  0.13408780097961426
+ScanTask::Execute :  0.15499520301818848
+ScanTask::Execute :  0.14346861839294434
+ScanTask::Execute :  0.15350604057312012
+ScanTask::Execute :  0.13854432106018066
+ScanTask::Execute :  0.1335747241973877
+ScanTask::Execute :  0.1389005184173584
+ScanTask::Execute :  0.14040493965148926
+ScanTasks:  11
+1.5697338581085205
+
+
+
+
+results:  [1.515320062637329, 1.5124895572662354, 1.5697338581085205]
+time:  1.532514492670695
+
+```
+
+
+Storage readings - 
+
+```
+```
 
 
 
