@@ -1,3 +1,42 @@
+# Vanilla Parquet
+
+```
+Using format:  parquet
+ScanTask::Execute :  0.30007028579711914
+ScanTask::Execute :  0.2132856845855713
+ScanTask::Execute :  0.2073040008544922
+ScanTask::Execute :  0.21343660354614258
+ScanTask::Execute :  0.204270601272583
+ScanTask::Execute :  0.2139742374420166
+ScanTask::Execute :  0.20508837699890137
+ScanTask::Execute :  0.19139528274536133
+ScanTask::Execute :  0.20505118370056152
+ScanTask::Execute :  0.20979547500610352
+ScanTask::Execute :  0.20309972763061523
+ScanTask::Execute :  0.21631956100463867
+ScanTask::Execute :  0.2136669158935547
+ScanTask::Execute :  0.2085578441619873
+ScanTask::Execute :  0.2118213176727295
+ScanTask::Execute :  0.21572279930114746
+ScanTask::Execute :  0.20607686042785645
+ScanTask::Execute :  0.23346590995788574
+ScanTask::Execute :  0.20811080932617188
+ScanTask::Execute :  0.20220184326171875
+ScanTask::Execute :  0.20959734916687012
+ScanTask::Execute :  0.18120789527893066
+ScanTask::Execute :  0.21074581146240234
+ScanTask::Execute :  0.17518234252929688
+ScanTasks:  24
+5.059448719024658
+
+
+
+
+results:  [5.059448719024658]
+time:  5.059448719024658
+```
+
+
 # Rados Parquet
 
 client - 
