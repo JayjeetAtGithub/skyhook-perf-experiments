@@ -1,5 +1,12 @@
 # Deploying Multi-node Memstore Ceph 
 
+**Credits**: 
+```
+https://blog.risingstack.com/ceph-storage-deployment-vm/
+
+https://dev.to/keecheriljobin/monitoring-single-node-ceph-cluster-using-prometheus-grafana-on-aws-3i77https://dev.to/keecheriljobin/monitoring-single-node-ceph-cluster-using-prometheus-grafana-on-aws-3i77
+```
+
 1. Install `python3` and `pip3` (required by ceph-deploy).
 ```bash
 apt update
@@ -55,4 +62,54 @@ memstore device bytes = 53687091200 # 50 GB
 ```bash
 ceph-deploy --overwrite-conf config push node{1..4}
 ```
-10. At this point, we have the cluster up and running without the OSDs.
+10. At this point, we have the cluster up and running without the OSDs. To check the status,
+```bash
+```
+
+15. Deploying a CephFS.
+```bash
+ceph-deploy mds create node1
+ceph osd pool create cephfs_data 8
+ceph osd pool create cephfs_metadata 8
+ceph fs new cephfs cephfs_metadata cephfs_data
+```
+
+16. Deploying the Ceph Dashboard. 
+
+```bash
+# install `ceph-mgr-dashboard` on the MGR node.
+apt install -y ceph-mgr-dashboard
+
+# from the admin nodes,
+ceph mgr module enable dashboard
+ceph config set mgr mgr/dashboard/ssl false
+ceph dashboard ac-user-create admin secret administrator --force-password
+
+# Then navigate to :8080 of the MGR node and use admin as username and secret as password to login
+```
+
+17. Setting up Monitoring using Prometheus and Grafana.
+
+```bash
+# enable prometheus on MGR
+ceph mgr module enable prometheus
+
+# get the prometheus exporter endpoint by running
+ceph mgr services
+
+# write the prometheus config file
+cat >> /etc/prometheus/prometheus.yml << EOF
+global:
+  scrape_interval: 10s
+
+scrape_configs:
+  - job_name: 'prometheus_master'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['ms0826.utah.cloudlab.us:9283']
+EOF
+
+# start the prometheus and grafana containers
+docker run -p 9090:9090 -d -v /etc/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
+docker run -d -p 3000:3000 grafana/grafana
+```
