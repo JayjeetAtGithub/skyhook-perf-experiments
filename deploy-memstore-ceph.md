@@ -70,6 +70,17 @@ cp ceph.client.admin.keyring  /etc/ceph/ceph.client.admin.keyring
 ceph -s
 ```
 
+11. Deploy the OSDs.
+```bash
+# send the OSDs keys 
+for i in {1..8}; do
+  scp ceph.bootstrap-osd.keyring node${i}:/etc/ceph/ceph.keyring
+  scp ceph.bootstrap-osd.keyring node${i}:/var/lib/ceph/bootstrap-osd/ceph.keyring
+done
+
+# start OSDs. for each OSD node, run the deploy_osd.sh script
+```
+
 15. Deploying a CephFS.
 ```bash
 ceph-deploy mds create node1
