@@ -17,4 +17,7 @@ systemctl restart ceph-mon.target
 systemctl restart ceph-osd.target
 systemctl restart ceph-mds.target
 systemctl restart ceph-mgr.target
+
+# If you get Too many open files error,
+ulimit -n 5000
 ```
