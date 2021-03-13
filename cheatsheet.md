@@ -1,4 +1,4 @@
-## Ceph Cheatsheet
+## Experiment Cheatsheet
 
 ```bash
 # unmount cephfs
@@ -20,4 +20,7 @@ systemctl restart ceph-mgr.target
 
 # If you get Too many open files error,
 ulimit -n 5000
+
+# To create partitions and mount filesystems
+https://www.digitalocean.com/community/tutorials/how-to-partition-and-format-storage-devices-in-linux
 ```

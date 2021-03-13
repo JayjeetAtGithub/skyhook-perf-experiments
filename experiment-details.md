@@ -1,6 +1,6 @@
 # Experiments
 
-## 4 Node Cluster
+## 4 OSD (Baremetal ; m510 ; Cloudlab Utah)
 
 ###  Infrastructure
 ```
@@ -25,3 +25,26 @@ Threads used in experiment: 64 (4 * 16 cores/node)
 
 ### Total Rows in Dataset and Dataset Size
 
+```
+Total Rows: 2,400,000,000 (2.4 Billion)
+```
+
+* 16 MB (800,000) * 3000 - 
+
+**Parquet**:
+```
+100% = [91.3838381767273, 87.26745867729187, 84.44949650764465, 86.07639145851135, 86.3411762714386]
+10% = [97.21594142913818, 86.21088409423828, 92.5713562965393, 88.3304090499878, 86.98502707481384]
+1% = [84.81373715400696, 81.41213274002075, 83.04173803329468, 82.83652830123901, 84.36737394332886]
+
+Filters used:
+# df[df['total_amount'] > 27] # 10%
+# df[df['total_amount'] > 69] # 1%
+
+Throughput: 
+~700 - 900 MBps
+```
+
+**Rados Parquet**: 
+```
+```
