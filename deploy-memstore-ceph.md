@@ -10,7 +10,7 @@ https://dev.to/keecheriljobin/monitoring-single-node-ceph-cluster-using-promethe
 1. Install `python3` and `pip3` (required by ceph-deploy).
 ```bash
 apt update
-apt install -y python3-venv python3-pip
+apt install -y python3-venv python3-pip ceph-fuse ceph-common
 ```
 
 2. Install `ceph-deploy`
@@ -34,7 +34,7 @@ ceph-deploy new node1 node2 node3
 
 5. Install `ceph` dependencies on all the nodes.
 ```bash
-ceph-deploy install --release octopus node1 node2 node3 node4
+ceph-deploy install --release octopus node1 node2 node3 node4 node5 node6 node7 node8
 ```
 
 6. Start the MON daemons.
@@ -61,10 +61,13 @@ memstore device bytes = 53687091200 # 50 GB
 ```
 
 ```bash
-ceph-deploy --overwrite-conf config push node{1..4}
+ceph-deploy --overwrite-conf config push node{1..8}
 ```
 10. At this point, we have the cluster up and running without the OSDs. To check the status,
 ```bash
+cp ceph.conf /etc/ceph/ceph.conf
+cp ceph.client.admin.keyring  /etc/ceph/ceph.client.admin.keyring
+ceph -s
 ```
 
 15. Deploying a CephFS.
