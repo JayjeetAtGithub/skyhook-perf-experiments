@@ -54,6 +54,7 @@ ceph-deploy mgr create node1
 
 9. Update the `ceph.conf` with memstore configuration and push it to all the nodes.
 ```bash
+mon allow pool delete = true
 osd objectstore = memstore
 osd class load list = *
 memstore device bytes = 53687091200 # 50 GB
