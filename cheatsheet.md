@@ -1,6 +1,9 @@
 ## Ceph Cheatsheet
 
 ```bash
+# unmount cephfs
+fusermount -uz /mnt/cephfs
+
 # delete a filesystem
 ceph fs fail cephfs
 ceph fs rm cephfs --yes-i-really-mean-it

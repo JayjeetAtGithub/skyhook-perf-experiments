@@ -70,9 +70,11 @@ ceph-deploy --overwrite-conf config push node{1..4}
 15. Deploying a CephFS.
 ```bash
 ceph-deploy mds create node1
-ceph osd pool create cephfs_data 8
-ceph osd pool create cephfs_metadata 8
+ceph osd pool create cephfs_data 128
+ceph osd pool create cephfs_metadata 128
 ceph fs new cephfs cephfs_metadata cephfs_data
+mkdir -p /mnt/cephfs
+ceph-fuse /mnt/cephfs
 ```
 
 16. Deploying the Ceph Dashboard. 
