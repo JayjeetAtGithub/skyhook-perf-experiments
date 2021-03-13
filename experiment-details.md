@@ -10,7 +10,7 @@ Total PGs = ------------ = 8 * 100 / 3 = ~270
 
 ```
 
-### Total Rows
+### Number of Rows in Files of Different Sizes
 ```
 8MB: 440,000
 16MB: 800,000
@@ -18,4 +18,8 @@ Total PGs = ------------ = 8 * 100 / 3 = ~270
 64MB: 2,600,000
 ```
 
-**TODO:** 4MB and 128MB
+### Total Rows in Dataset and Dataset Size
+
+### 
+
+**TODO:** Support 4MB and 128MB
