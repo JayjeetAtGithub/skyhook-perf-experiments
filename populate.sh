@@ -8,7 +8,7 @@ end=${4}
 
 for ((i = ${start} ; i <= ${end} ; i++)); do
     touch ${destination}.${i}
-    setfattr -n ceph.file.layout.object_size -v 4194304 ${destination}.${i}
+    setfattr -n ceph.file.layout.object_size -v 8388608 ${destination}.${i}
     echo "copying ${source} to ${destination}.${i}"
     cp ${source} ${destination}.${i}
 done
