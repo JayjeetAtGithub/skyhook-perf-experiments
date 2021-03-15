@@ -30,7 +30,7 @@ Threads used in experiment: 64 (4 * 16 cores/node)
 Total Rows: 1,200,000,000 (1.2 Billion)
 ```
 
-#### 32 MB (1,400,000) * 860 - [OSD Slow Ops][Need to try again]
+#### 32 MB (1,400,000) * 860 - [OSD Slow Ops]
 
 **Parquet**:
 ```
