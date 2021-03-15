@@ -142,4 +142,4 @@ Threads used in experiment: 128 (8 * 16 cores/node)
 ![5](./images/8node_4MB.png)
 
 
-[!client side cpu](./images/client_cpu.png)
+![client side cpu](./images/client_cpu.png)
