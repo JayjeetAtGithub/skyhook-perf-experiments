@@ -141,5 +141,5 @@ Threads used in experiment: 128 (8 * 16 cores/node)
 
 ![5](./images/8node_4MB.png)
 
-
+### Common CPU Usage
 ![client side cpu](./images/client_cpu.png)
