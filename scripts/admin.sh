@@ -63,7 +63,7 @@ ceph -s
 for i in {1..4}; do
   scp ceph.bootstrap-osd.keyring node${i}:/etc/ceph/ceph.keyring
   scp ceph.bootstrap-osd.keyring node${i}:/var/lib/ceph/bootstrap-osd/ceph.keyring
-  scp ../deploy_osd.sh node${i}:/tmp/deploy_osd.sh
+  scp /tmp/deploy_osd.sh node${i}:/tmp/deploy_osd.sh
   ssh node${i} /tmp/deploy_osd.sh
 done
 
@@ -73,6 +73,7 @@ ceph osd pool create cephfs_data 16
 ceph osd pool create cephfs_metadata 16
 ceph fs new cephfs cephfs_metadata cephfs_data
 mkdir -p /mnt/cephfs
+ceph-fuse /mnt/cephfs
 
 # deploy Ceph dashboard
 ssh node1 apt update
