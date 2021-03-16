@@ -11,6 +11,7 @@ ceph fs rm cephfs --yes-i-really-mean-it
 # delete the cephfs pools
 ceph osd pool rm cephfs_data cephfs_data --yes-i-really-really-mean-it
 ceph osd pool rm cephfs_metadata cephfs_metadata --yes-i-really-really-mean-it
+ceph osd pool rm device_health_metrics device_health_metrics --yes-i-really-really-mean-it
 
 # restart daemons
 systemctl restart ceph-mon.target
