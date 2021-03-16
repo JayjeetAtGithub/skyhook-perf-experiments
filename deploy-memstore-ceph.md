@@ -58,6 +58,7 @@ mon allow pool delete = true
 osd objectstore = memstore
 osd class load list = *
 memstore device bytes = 53687091200 # 50 GB
+osd op threads = 16
 ```
 
 ```bash
