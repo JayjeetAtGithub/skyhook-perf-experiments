@@ -85,8 +85,8 @@ done
 15. Deploying a CephFS.
 ```bash
 ceph-deploy mds create node1
-ceph osd pool create cephfs_data 128
-ceph osd pool create cephfs_metadata 128
+ceph osd pool create cephfs_data 64
+ceph osd pool create cephfs_metadata 64
 ceph fs new cephfs cephfs_metadata cephfs_data
 mkdir -p /mnt/cephfs
 ceph-fuse /mnt/cephfs

@@ -27,7 +27,7 @@ https://www.digitalocean.com/community/tutorials/how-to-partition-and-format-sto
 
 
 # restarting osds
-for i in {1..8}; do
+for i in {1..4}; do
   ssh node${i} systemctl restart ceph-osd.target
 done
 
