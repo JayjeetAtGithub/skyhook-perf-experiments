@@ -73,7 +73,6 @@ ceph osd pool create cephfs_data 16
 ceph osd pool create cephfs_metadata 16
 ceph fs new cephfs cephfs_metadata cephfs_data
 mkdir -p /mnt/cephfs
-ceph-fuse /mnt/cephfs
 
 # deploy Ceph dashboard
 ssh node1 apt update
