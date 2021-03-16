@@ -149,4 +149,4 @@ Threads used in experiment: 128 (8 * 16 cores/node)
 
 #### Storage 
 
-TODO
+**TODO**: get the plots
