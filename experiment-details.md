@@ -110,6 +110,8 @@ Total Rows: 1,200,000,000 (1.2 Billion)
 
 ![4](./images/4node_4MB.png)
 
+
+<!--
 ## 8 OSD (Baremetal ; m510 ; Cloudlab Utah)
 
 ###  Infrastructure
@@ -141,15 +143,18 @@ Threads used in experiment: 128 (8 * 16 cores/node)
 
 ![5](./images/8node_4MB.png)
 
-### Common CPU Usage
+-->
 
-#### Client
+### CPU Usage
 
-![client side cpu](./images/client_cpu.png)
+#### Parquet
 
-#### Storage 
+![5](./images/client_4node_nopushdown.png)
 
-**TODO**: get the plots
+#### Rados Parquet
+
+![6](./images/client_4node_pushdown.png)
+![7](./images/osd_4node_pushdown.png)
 
 
 
@@ -157,4 +162,4 @@ Threads used in experiment: 128 (8 * 16 cores/node)
 rpq_100 = 
 rpq_10 = [152.50715136528015, 152.18096017837524, 153.30246591567993]
 rpq_1 = [147.38387823104858, 147.24475741386414, 147.22748804092407]
-rpq_smm = [146.55077481269836, 146.39087986946106, 146.6287670135498]
+rpq_0.0001 = [146.55077481269836, 146.39087986946106, 146.6287670135498]
