@@ -23,12 +23,7 @@ sudo apt install ubuntu-dbgsym-keyring
 sudo apt-get update
 sudo apt-get install xserver-xorg-core-dbgsym
 
-mkdir mycluster
-wget https://raw.githubusercontent.com/ceph/go-ceph/master/micro-osd.sh
-chmod +x micro-osd.sh
-./micro-osd.sh mycluster
-
-cp mycluster/ceph.conf /etc/ceph/ceph.conf
+curl -o- https://raw.githubusercontent.com/JayjeetAtGithub/memstore-ceph-ucsc/master/micro-osd.sh | bash
 
 git clone --branch v0.1.1 https://github.com/uccross/arrow /tmp/arrow
 cd /tmp/arrow
@@ -37,3 +32,9 @@ cd cpp/debug
 
 cmake -DCMAKE_BUILD_TYPE=Debug -DARROW_CLS=ON -DARROW_PARQUET=ON -DARROW_WITH_SNAPPY=ON -DARROW_WITH_ZLIB=ON -DARROW_BUILD_EXAMPLES=ON -DPARQUET_BUILD_EXAMPLES=ON -DARROW_DATASET=ON -DARROW_CSV=ON ..
 make -j4 install
+
+cp debug/libcls* /usr/lib/x86_64-linux-gnu/rados-classes
+cp debug/libarrow* /usr/lib
+cp debug/libparquet* /usr/lib
+
+systemctl restart ceph-osd.target
