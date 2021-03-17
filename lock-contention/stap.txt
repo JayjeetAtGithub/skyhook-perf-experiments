@@ -1,0 +1,12 @@
+sudo stap mutexes.stp \
+    -d /usr/bin/ceph-osd \
+    -d /usr/bin/ceph-mgr \
+    -d /usr/lib/libarrow_dataset.so.400 \
+    -d /usr/lib/libarrow.so.400 \
+    -d /usr/lib/libparquet.so.400 \
+    -d /usr/lib/x86_64-linux-gnu/librados.so.2.0.0 \
+    -d /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25 \
+    -d /lib/x86_64-linux-gnu/libc-2.27.so \
+    -d /usr/lib/x86_64-linux-gnu/libunwind.so.8.0.1 \
+    -d /usr/lib/x86_64-linux-gnu/rados-classes/libcls_arrow.so \
+    -d /usr/lib/x86_64-linux-gnu/ceph/libceph-common.so.0  > locks-test.log -DSTP_NO_OVERLOAD
