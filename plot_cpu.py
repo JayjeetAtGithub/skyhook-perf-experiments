@@ -30,3 +30,9 @@ plt.xlabel('Time')
 plt.ylabel('CPU Usage (%)')
 plt.gcf().autofmt_xdate()
 plt.savefig(filename)
+
+# python3 cpu.py 'OSD.0' 60 osd.0.png
+# python3 cpu.py 'OSD.1' 60 osd.1.png
+# python3 cpu.py 'OSD.2' 60 osd.2.png
+# python3 cpu.py 'OSD.3' 60 osd.3.png
+
