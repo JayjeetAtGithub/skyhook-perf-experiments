@@ -29,7 +29,7 @@ print("Using format: ", format_)
 if selectivity == "0.01":
     filter_ = (ds.field("total_amount") > 200)
 elif selectivity == "1":
-    filter_ = (ds.field("total_amount") > 70)
+    filter_ = (ds.field("total_amount") > 69)
 elif selectivity == "10":
     filter_ = (ds.field("total_amount") > 27)
 elif selectivity == "100":
@@ -37,39 +37,32 @@ elif selectivity == "100":
 elif selectivity == "sm":
     filter_ = (ds.field("total_amount") > 300)
 elif selectivity == "smm":
-    filter_ = (ds.field("total_amount") > 700)
+    filter_ = (ds.field("total_amount") > 500)
 
 from concurrent.futures import ThreadPoolExecutor
 import multiprocessing as mp
 
 def do_scan(scan_task):
-    e = os.system("./clean_cache.sh")
-    if e != 0:
-        print('Failed to clean cache')
-    s = time.time()
-    e = None
     it = scan_task.execute()
     for batch in it:
-        e = time.time()
-        print("ScanTask::Execute : ", e - s )
+	    print(batch.to_string())
 
 results = list()
 for i in range(iterations):
+    e = os.system('./clean_cache.sh')
+    if e != 0:
+        print('failed to clean cache')
     dataset_ = ds.dataset(directory, format=format_)
     start = time.time()
     print(i, " start at: ", start)
     j = 0
 
-    for scan_task in dataset_.scan(filter=filter_, use_threads=False):
-        j += 1
-        do_scan(scan_task)
-    '''
-    with ThreadPoolExecutor(max_workers=24) as executor:
+    with ThreadPoolExecutor(max_workers=64) as executor:
             for scan_task in dataset_.scan(filter=filter_):
                     j += 1
                     future = executor.submit(do_scan, scan_task)
-    '''
-    print("ScanTasks: ", j)
+
+    print("scan tasks count: ", j)
     end = time.time()
     print(i, " end at: ", end)
     print(end-start)
