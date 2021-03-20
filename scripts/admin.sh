@@ -63,7 +63,7 @@ ceph -s
 for i in {1..4}; do
   scp ceph.bootstrap-osd.keyring node${i}:/etc/ceph/ceph.keyring
   scp ceph.bootstrap-osd.keyring node${i}:/var/lib/ceph/bootstrap-osd/ceph.keyring
-  scp /tmp/deploy_osd.sh node${i}:/tmp/deploy_osd.sh
+  scp ./deploy_osd.sh node${i}:/tmp/deploy_osd.sh
   ssh node${i} /tmp/deploy_osd.sh
 done
 
@@ -80,6 +80,8 @@ ssh node1 apt install -y ceph-mgr-dashboard
 
 ssh node1 ceph mgr module enable dashboard
 ssh node1 ceph config set mgr mgr/dashboard/ssl false
-ssh node1 ceph dashboard ac-user-create admin secret administrator --force-password
+echo "secret" > file
+scp file node1:/tmp/file
+ssh node1 ceph dashboard ac-user-create admin -i /tmp/file administrator --force-password
 
 # guess we are done !
