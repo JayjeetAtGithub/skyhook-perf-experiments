@@ -209,7 +209,7 @@ pq_smm = [176.49573183059692, 175.51851797103882, 175.54095315933228]
 ```
 ![9](./images/1osd_on_1node.png)
 
-<hr>
+## 4 Nodes, 16 OSDs, 16 threads/osd, 64 threads on client
 
 ```
 pq_100 = [178.27652978897095, 176.8193085193634, 176.88589549064636]
@@ -224,3 +224,9 @@ rpq_smm =  [86.64625835418701, 87.04030799865723, 86.70620584487915]
 ```
 
 ![10](./images/4node_16osd_16threads_per_osd_64threads_client.png)
+![11](./images/4node_16osd_mem/client_nopushdown.png)
+![12](./images/4node_16osd_mem/client_pushdown.png)
+![13](./images/4node_16osd_mem/osd.0.png)
+![14](./images/4node_16osd_mem/osd.1.png)
+![15](./images/4node_16osd_mem/osd.2.png)
+![16](./images/4node_16osd_mem/osd.3.png)
