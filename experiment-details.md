@@ -191,7 +191,7 @@ rpq_smm = [195.0087571144104, 194.9644136428833, 194.91646361351013]
 
 ## 1 Node, 4 OSD, 64 threads on Client and 16 threads on OSD
  
-Same latency, Same CPU usage
+Same latency and Same CPU usage as 64 threads on OSD
 
 ## 1 Node, 1 OSD, 64 threads on client and 16 threads on OSD
 ```
