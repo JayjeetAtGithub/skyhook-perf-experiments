@@ -189,6 +189,9 @@ rpq_smm = [195.0087571144104, 194.9644136428833, 194.91646361351013]
 ![client1](./images/client_nopushdown_4osd.png)
 ![client2](./images/client_pushdown_4osd.png)
 
+## 1 Node, 4 OSD, 64 threads on Client and 16 threads on OSDs
+
+Same as above
 
 ## 1 Node, 4 OSD, 16 threads on Client and 16 threads on OSDs
 
