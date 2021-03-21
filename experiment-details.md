@@ -167,9 +167,9 @@ Threads used in experiment: 128 (8 * 16 cores/node)
 
 ![8](./images/4node_4MB_with_osd_threads_16.png)
 
-<hr>
+<hr> <b>With 4 OSDs per Node</b>
 
-## 1 Node, 4 OSD, 64 threads on Client and 64 threads on OSD
+## 1 Node, 4 OSD, 64 threads on Client and 64 threads on OSDs
 
 ```
 pq_100 = [170.754980087280273, 170.24121904373169, 170.237956523895264]
@@ -186,10 +186,13 @@ rpq_smm = [195.0087571144104, 194.9644136428833, 194.91646361351013]
 ```
 
 ![9](./images/4osd_on_1node.png)
+![osd1](./images/storage_pushdown_temp_4osd.png)
+![osd2](./images/storage_nopushdown_4osd.png)
+![client1](./images/client_nopushdown_4osd.png)
+![client2](./images/client_pushdown_4osd.png)
 
-## 1 Node, 4 OSD, 64 threads on Client and 16 threads on OSD
- 
-**NOTE:** Same CPU usage as 64 threads on OSD.
+
+## 1 Node, 4 OSD, 16 threads on Client and 16 threads on OSDs
 
 ```
 rpq_100 = [220.543210745, 223.376989632, 223.937341547]
@@ -203,24 +206,28 @@ pq_1 = [178.45989274978638, 178.20130562782288, 178.13895440101624]
 pq_smm = [176.9593644142151, 176.93329191207886, 177.18875932693481]
 ```
 
-**NOTE:** Anything below 16 threads per OSD reduces performance slightly.
-
+![osd1](./images/osd_pushdown_4th.png)
+![osd2](./images/osd_nopushdown_4th.png)
+![client1](./images/client_nopushdown_4osdth.png)
+![client2](./images/client_pushdown_4osdth.png)
 
 ## 1 Node, 1 OSD, 64 threads on client and 16 threads on OSD
 ```
-rpq_100 = [400.994327545166016, 402.2645788192749, 401.319567918777466]
 pq_100 = [170.759889841079712, 170.34088397026062, 170.2715961933136]
-
-rpq_10 = [399.8353533744812, 399.3708894252777, 398.54316449165344]
 pq_10 = [182.96660947799683, 182.1477289199829, 182.60507011413574]
-
-rpq_1 = [386.5476815700531, 386.9798300266266, 386.0677242279053]
 pq_1 = [178.0334963798523, 177.3169300556183, 177.2567789554596]
-
-rpq_smm = [384.5647027492523, 384.5121479034424, 384.25928235054016]
 pq_smm = [176.49573183059692, 175.51851797103882, 175.54095315933228]
+
+rpq_100 = [400.994327545166016, 402.2645788192749, 401.319567918777466]
+rpq_10 = [399.8353533744812, 399.3708894252777, 398.54316449165344]
+rpq_1 = [386.5476815700531, 386.9798300266266, 386.0677242279053]
+rpq_smm = [384.5647027492523, 384.5121479034424, 384.25928235054016]
 ```
+
 ![9](./images/1osd_on_1node.png)
+![client_pushdown](./images/client_single_node_pushdown_parallel.png)
+![client_nopushdown](./images/client_single_node_nopushdown_parallel.png)
+![osd_pushdown](./images/osd_single_node_parallel.png)
 
 ## 4 Nodes, 16 OSDs, 16 threads/osd, 64 threads on client
 
@@ -243,3 +250,6 @@ rpq_smm =  [86.64625835418701, 87.04030799865723, 86.70620584487915]
 ![14](./images/4node_16osd_mem/osd.1.png)
 ![15](./images/4node_16osd_mem/osd.2.png)
 ![16](./images/4node_16osd_mem/osd.3.png)
+
+## 4 Nodes, 16 OSDs, 16 threads/osd, 256 threads on client
+
