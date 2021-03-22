@@ -73,6 +73,8 @@ ceph osd pool create cephfs_data 16
 ceph osd pool create cephfs_metadata 16
 ceph fs new cephfs cephfs_metadata cephfs_data
 mkdir -p /mnt/cephfs
+sleep 5
+ceph-fuse /mnt/cephfs
 
 # deploy Ceph dashboard
 ssh node1 apt update
@@ -85,3 +87,4 @@ scp file node1:/tmp/file
 ssh node1 ceph dashboard ac-user-create admin -i /tmp/file administrator --force-password
 
 # guess we are done !
+ceph -s

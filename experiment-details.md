@@ -300,7 +300,18 @@ rpq_10 = [71.76636862754822, 73.09835386276245, 72.34029769897461]
 
 ## 4 Nodes, 16 OSDs, 4 threads/osd, 128 threads on client, 16 MB Files
 
-Running into OSD problems
+```
+rpq_100 = [172.28752326965332]
+rpq_10 = [91.42255544662476]
+rpq_1 = [89.02127194404602]
+rpq_smm = [88.3635926246643]
+
+pq_100 = [171.31274572215037]
+pq_10 = [180.44058752059937]
+pq_1 = [174.95294404029846]
+pq_smm = [173.2882809638977]
+```
+
 
 
 ## 4 Nodes, 16 OSDs, 4 threads/osd, 128 threads on client, 8 MB Files
