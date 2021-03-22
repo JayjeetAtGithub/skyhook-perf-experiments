@@ -45,9 +45,7 @@ ceph-deploy mgr create node1
 # update the ceph.conf with memstore specific settings
 cat >> ceph.conf << EOF
 mon allow pool delete = true
-osd objectstore = memstore
 osd class load list = *
-memstore device bytes = 53687091200
 EOF
 
 # push the updated ceph.conf to all the nodes
@@ -88,3 +86,10 @@ ssh node1 ceph dashboard ac-user-create admin -i /tmp/file administrator --force
 
 # guess we are done !
 ceph -s
+
+# Deploy on disks
+
+ceph-deploy osd create --data /dev/nvme0n1p4 node1
+ceph-deploy osd create --data /dev/nvme0n1p4 node2
+ceph-deploy osd create --data /dev/nvme0n1p4 node3
+ceph-deploy osd create --data /dev/nvme0n1p4 node4
