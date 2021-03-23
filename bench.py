@@ -94,4 +94,4 @@ if __name__ == "__main__":
                 results.append([selectivity, end-start, format_])
 
     plot(results)
-    print("Experiment finished successfully !")
+    print(results)
