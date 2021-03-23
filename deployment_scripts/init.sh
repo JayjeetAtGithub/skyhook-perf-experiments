@@ -13,7 +13,7 @@ Host *
     StrictHostKeyChecking no
 EOF
 
-# install required dependencies
+# install required dependencies in all the nodes
 apt update
 apt install -y python3-venv python3-pip ceph-fuse ceph-common attr
 
