@@ -1,14 +1,8 @@
 #!/bin/bash
 set -eu
 
-# deploy the OSDs
-for i in {1..4}; do
-  scp ./deployment/ceph.bootstrap-osd.keyring node${i}:/etc/ceph/ceph.keyring
-  scp ./deployment/ceph.bootstrap-osd.keyring node${i}:/var/lib/ceph/bootstrap-osd/ceph.keyring
-done
-
 scp ./deploy_osd.sh node${i}:/tmp/deploy_osd.sh
-  ssh node${i} /tmp/deploy_osd.sh
+ssh node${i} /tmp/deploy_osd.sh
 
 # deploy MDS and ceph fs
 ceph-deploy mds create node1

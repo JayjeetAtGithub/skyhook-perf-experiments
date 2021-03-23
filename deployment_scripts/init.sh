@@ -56,3 +56,9 @@ ceph-deploy --overwrite-conf config push node{1..4}
 cp ceph.conf /etc/ceph/ceph.conf
 cp ceph.client.admin.keyring  /etc/ceph/ceph.client.admin.keyring
 ceph -s
+
+# copy the osd keyrings to the nodes
+for i in {1..4}; do
+  scp ./deployment/ceph.bootstrap-osd.keyring node${i}:/etc/ceph/ceph.keyring
+  scp ./deployment/ceph.bootstrap-osd.keyring node${i}:/var/lib/ceph/bootstrap-osd/ceph.keyring
+done
