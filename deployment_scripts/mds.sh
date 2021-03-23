@@ -3,6 +3,7 @@ set -eu
 
 apt update
 apt install -y ceph-fuse
+cd deployment/
 
 # deploy MDS and ceph fs
 ceph-deploy mds create node1
