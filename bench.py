@@ -24,6 +24,7 @@ def get_filter_from_selectivity(selectivity):
         filter_ = (ds.field("total_amount") > 27)
     elif selectivity == "0.0001":
         filter_ = (ds.field("total_amount") > 500)
+    print("Filter: ", filter_)
     return filter_
 
 
