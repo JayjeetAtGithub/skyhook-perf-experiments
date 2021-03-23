@@ -46,7 +46,7 @@ ceph-deploy mgr create node1
 cat >> ceph.conf << EOF
 mon allow pool delete = true
 osd class load list = *
-osd op threads = 16
+osd op threads = 4
 EOF
 
 # push the updated ceph.conf to all the nodes
