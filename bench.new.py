@@ -44,7 +44,7 @@ import multiprocessing as mp
 def do_scan(scan_task):
     it = scan_task.execute()
     for batch in it:
-	    print(batch.to_string())
+        batch.to_string()
 
 results = list()
 for i in range(iterations):
