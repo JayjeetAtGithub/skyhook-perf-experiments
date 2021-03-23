@@ -15,7 +15,7 @@ EOF
 
 # install required dependencies
 apt update
-apt install -y python3-venv python3-pip ceph-fuse ceph-common
+apt install -y python3-venv python3-pip ceph-fuse ceph-common attr
 
 # clone and install ceph-deploy==2.x.x
 git clone https://github.com/ceph/ceph-deploy
@@ -88,7 +88,6 @@ ssh node1 ceph dashboard ac-user-create admin -i /tmp/file administrator --force
 ceph -s
 
 # Deploy on disks
-
 ceph-deploy osd create --data /dev/nvme0n1p4 node1
 ceph-deploy osd create --data /dev/nvme0n1p4 node2
 ceph-deploy osd create --data /dev/nvme0n1p4 node3
