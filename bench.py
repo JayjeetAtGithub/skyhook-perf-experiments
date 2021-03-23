@@ -18,11 +18,11 @@ import matplotlib.pyplot as plt
 
 def get_filter_from_selectivity(selectivity):
     filter_ = None
-    if selectivity == "1":
+    if selectivity == 1:
         filter_ = (ds.field("total_amount") > 69)
-    elif selectivity == "10":
+    elif selectivity == 10:
         filter_ = (ds.field("total_amount") > 27)
-    elif selectivity == "0.0001":
+    elif selectivity == 0.0001:
         filter_ = (ds.field("total_amount") > 500)
     print("             Filter: ", filter_)
     return filter_
