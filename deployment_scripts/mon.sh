@@ -47,6 +47,8 @@ cat >> ceph.conf << EOF
 mon allow pool delete = true
 osd class load list = *
 osd op threads = 4
+osd objectstore = memstore
+memstore device bytes = 10737418240
 EOF
 
 # push the updated ceph.conf to all the nodes
