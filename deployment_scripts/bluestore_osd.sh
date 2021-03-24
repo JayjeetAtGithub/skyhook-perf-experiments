@@ -1,6 +1,4 @@
 #!/bin/bash
 set -eu
 
-cd deployment/
-ceph-deploy osd 
-
+ceph-volume lvm batch /dev/sdb
