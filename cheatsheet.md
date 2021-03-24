@@ -38,6 +38,9 @@ done
 # clearing volumes
 ceph-volume lvm zap /dev/sdb /dev/sdc --destroy
 
+# creating osd on disk
+ceph-volume lvm batch /dev/sdc
+
 # restart daemons
 systemctl restart ceph-mon.target
 systemctl restart ceph-osd.target
