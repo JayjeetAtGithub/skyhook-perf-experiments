@@ -9,6 +9,8 @@ ID=$(echo "{\"cephx_secret\": \"$OSD_SECRET\"}" | \
    ceph osd new $UUID -i - \
    -n client.bootstrap-osd -k /var/lib/ceph/bootstrap-osd/ceph.keyring)
 
+rm -rf /var/lib/ceph/osd/ceph-$ID
+
 mkdir /var/lib/ceph/osd/ceph-$ID
 
 ceph-authtool --create-keyring /var/lib/ceph/osd/ceph-$ID/keyring \
