@@ -13,6 +13,18 @@ ceph osd pool rm cephfs_data cephfs_data --yes-i-really-really-mean-it
 ceph osd pool rm cephfs_metadata cephfs_metadata --yes-i-really-really-mean-it
 ceph osd pool rm device_health_metrics device_health_metrics --yes-i-really-really-mean-it
 
+# stopping osds
+for i in {1..4}; do
+  ssh node${i} systemctl stop ceph-osd.target
+done
+
+# removing osds
+for i in {0..15}; do
+  ceph osd down osd.${i}
+  ceph osd out osd.${i}
+  ceph osd rm osd.${i}
+done
+
 # restart daemons
 systemctl restart ceph-mon.target
 systemctl restart ceph-osd.target
