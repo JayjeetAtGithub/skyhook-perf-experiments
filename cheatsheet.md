@@ -25,6 +25,14 @@ for i in {0..15}; do
   ceph osd rm osd.${i}
 done
 
+# remove from crush
+for i in {0..15}; do
+  ceph osd crush rm osd.${i}
+done
+
+# clearing volumes
+ceph-volume lvm zap /dev/sdb /dev/sdc --destroy
+
 # restart daemons
 systemctl restart ceph-mon.target
 systemctl restart ceph-osd.target
