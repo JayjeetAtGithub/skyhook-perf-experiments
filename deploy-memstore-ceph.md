@@ -62,7 +62,7 @@ osd op threads = 16
 ```
 
 ```bash
-ceph-deploy --overwrite-conf config push node{1..8}
+ceph-deploy --overwrite-conf config push node{1..4}
 ```
 10. At this point, we have the cluster up and running without the OSDs. To check the status,
 ```bash

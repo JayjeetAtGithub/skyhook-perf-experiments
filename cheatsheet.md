@@ -60,4 +60,7 @@ done
 for i in {1..3}; do
   ssh node${i} systemctl restart ceph-mon.target
 done
+
+# 
+export LD_LIBRARY_PATH=/usr/local/lib
 ```
