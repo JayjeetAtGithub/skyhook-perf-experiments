@@ -30,6 +30,11 @@ for i in {0..15}; do
   ceph osd crush rm osd.${i}
 done
 
+# remove from auth
+for i in {0..15}; do
+  ceph auth del osd.${i}
+done
+
 # clearing volumes
 ceph-volume lvm zap /dev/sdb /dev/sdc --destroy
 
