@@ -44,7 +44,7 @@ sum        59 GiB  1.6 TiB    67 GiB  1.7 TiB
 ![2](./cpu_2_pq_com.png)
 ![2](./cpu_2_rpq_com.png)
 
-3. 
+3. 16 nodes, 16 osds, 16 th/osd, 256 th/client
 
 * Latency
 
