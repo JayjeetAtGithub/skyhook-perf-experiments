@@ -6,11 +6,15 @@ import matplotlib.pyplot as plt
 username = "noobjc"
 
 hostnames = [
-    "c220g2-011314.wisc.cloudlab.us",
-    "c220g2-011323.wisc.cloudlab.us",
-    "c220g2-011321.wisc.cloudlab.us",
-    "c220g2-011307.wisc.cloudlab.us",
-    "c220g2-011313.wisc.cloudlab.us"
+    "ms1210.utah.cloudlab.us",
+    "ms1216.utah.cloudlab.us",
+    "ms1232.utah.cloudlab.us",
+    "ms1228.utah.cloudlab.us",
+    "ms0926.utah.cloudlab.us",
+    "ms1203.utah.cloudlab.us",
+    "ms1002.utah.cloudlab.us",
+    "ms0943.utah.cloudlab.us",
+    "ms1004.utah.cloudlab.us"
 ]
 
 if __name__ == "__main__":
@@ -33,11 +37,11 @@ if __name__ == "__main__":
         plt.plot(seconds, node_result, markersize=10, linewidth=1.5, label=label)
 
 
-    plt.ylim(0.0, 4000.0)
+    plt.ylim(0.0, 1600.0)
     plt.xlabel('Time Span (s)')
     plt.ylabel('CPU Usage (%)')
-    plt.title('CPU Usage - RADOS PARQUET')
+    plt.title('CPU Usage - RADOS PARQUET - 100\% SELECTIVITY')
     plt.gca().yaxis.grid(True)
     plt.legend()
-    plt.savefig('./cpu_4_rpq.png', dpi=300, bbox_inches='tight')
+    plt.savefig('./cpu_2_rpq_nocom.png', dpi=300, bbox_inches='tight')
     plt.show()
