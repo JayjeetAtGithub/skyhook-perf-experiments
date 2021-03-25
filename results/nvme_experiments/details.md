@@ -1,3 +1,14 @@
+1. 4 nodes, 4 osds, 16th/osd, 64 th/client
+
+* Latency
+
+![1](./4node_with_1osdeach.png)
+
+* CPU Usage
+
+![2](./cpu_1_pq_com.png)
+![2](./cpu_1_rpq_com.png)
+
 2. 8 nodes, 8 osds, 16 th/osd, 128 th/client
 
 * Latency
