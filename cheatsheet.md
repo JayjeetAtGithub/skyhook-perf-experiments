@@ -19,19 +19,19 @@ for i in {1..4}; do
 done
 
 # removing osds
-for i in {0..15}; do
+for i in {4..15}; do
   ceph osd down osd.${i}
   ceph osd out osd.${i}
   ceph osd rm osd.${i}
 done
 
 # remove from crush
-for i in {0..15}; do
+for i in {4..15}; do
   ceph osd crush rm osd.${i}
 done
 
 # remove from auth
-for i in {0..15}; do
+for i in {4..15}; do
   ceph auth del osd.${i}
 done
 
