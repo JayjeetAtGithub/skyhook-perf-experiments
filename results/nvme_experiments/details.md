@@ -6,8 +6,8 @@
 
 * CPU Usage
 
-![2](./cpu_1_pq_com.png)
-![2](./cpu_1_rpq_com.png)
+![1](./cpu_1_pq_com.png)
+![1](./cpu_1_rpq_com.png)
 
 2. 8 nodes, 8 osds, 16 th/osd, 128 th/client
 
@@ -82,3 +82,7 @@ OSD_STAT  USED     AVAIL    USED_RAW  TOTAL    HB_PEERS                         
 12        2.8 GiB  213 GiB   3.8 GiB  216 GiB   [0,1,2,3,4,5,6,7,8,9,10,11,13,14,15]      14               6
 sum        59 GiB  3.3 TiB    75 GiB  3.4 TiB                                                               
 ```
+* CPU
+
+![3](./cpu_3_pq_com.png)
+![3](./cpu_3_rpq_com.png)
