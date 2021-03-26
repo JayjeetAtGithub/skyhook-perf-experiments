@@ -52,7 +52,7 @@ memstore device bytes = 10737418240
 EOF
 
 # push the updated ceph.conf to all the nodes
-ceph-deploy --overwrite-conf config push node{1..8}
+ceph-deploy --overwrite-conf config push node{1..16}
 
 # At this point, the ceph cluster MONs should be in quorum and we should
 # be able to connect to the cluster
