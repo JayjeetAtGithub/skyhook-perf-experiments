@@ -14,24 +14,24 @@ ceph osd pool rm cephfs_metadata cephfs_metadata --yes-i-really-really-mean-it
 ceph osd pool rm device_health_metrics device_health_metrics --yes-i-really-really-mean-it
 
 # stopping osds
-for i in {1..4}; do
+for i in {1..8}; do
   ssh node${i} systemctl stop ceph-osd.target
 done
 
 # removing osds
-for i in {4..15}; do
+for i in {0..7}; do
   ceph osd down osd.${i}
   ceph osd out osd.${i}
   ceph osd rm osd.${i}
 done
 
 # remove from crush
-for i in {4..15}; do
+for i in {0..7}; do
   ceph osd crush rm osd.${i}
 done
 
 # remove from auth
-for i in {4..15}; do
+for i in {0..7}; do
   ceph auth del osd.${i}
 done
 
@@ -55,12 +55,12 @@ https://www.digitalocean.com/community/tutorials/how-to-partition-and-format-sto
 
 
 # restarting osds
-for i in {1..4}; do
+for i in {1..8}; do
   ssh node${i} systemctl restart ceph-osd.target
 done
 
 # restarting mons
-for i in {1..3}; do
+for i in {1..8}; do
   ssh node${i} systemctl restart ceph-mon.target
 done
 
