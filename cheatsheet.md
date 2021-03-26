@@ -14,24 +14,24 @@ ceph osd pool rm cephfs_metadata cephfs_metadata --yes-i-really-really-mean-it
 ceph osd pool rm device_health_metrics device_health_metrics --yes-i-really-really-mean-it
 
 # stopping osds
-for i in {1..8}; do
+for i in {1..16}; do
   ssh node${i} systemctl stop ceph-osd.target
 done
 
 # removing osds
-for i in {0..7}; do
+for i in {0..64}; do
   ceph osd down osd.${i}
   ceph osd out osd.${i}
   ceph osd rm osd.${i}
 done
 
 # remove from crush
-for i in {0..7}; do
+for i in {0..64}; do
   ceph osd crush rm osd.${i}
 done
 
 # remove from auth
-for i in {0..7}; do
+for i in {0..64}; do
   ceph auth del osd.${i}
 done
 

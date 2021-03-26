@@ -61,7 +61,7 @@ cp ceph.client.admin.keyring  /etc/ceph/ceph.client.admin.keyring
 ceph -s
 
 # copy the osd keyrings to the nodes
-for i in {1..8}; do
+for i in {1..16}; do
   scp ./deployment/ceph.bootstrap-osd.keyring node${i}:/etc/ceph/ceph.keyring
   scp ./deployment/ceph.bootstrap-osd.keyring node${i}:/var/lib/ceph/bootstrap-osd/ceph.keyring
   scp ./memstore_osd.sh node${i}:/users/noobjc/
