@@ -74,15 +74,19 @@ ceph -s
 11. Deploy the OSDs.
 ```bash
 # send the OSDs keys 
-for i in {1..8}; do
+for i in {1..4}; do
   scp ceph.bootstrap-osd.keyring node${i}:/etc/ceph/ceph.keyring
   scp ceph.bootstrap-osd.keyring node${i}:/var/lib/ceph/bootstrap-osd/ceph.keyring
+  scp deployment_scripts/memstore_osd.sh node${i}:/users/noobjc/memstore_osd.sh
 done
 
 # start OSDs. for each OSD node, run the deploy_osd.sh script
+for i in {1..4}; do
+  ssh node${i} /users/noobjc/memstore_osd.sh
+done
 ```
 
-15. Deploying a CephFS.
+12. Deploying a CephFS.
 ```bash
 ceph-deploy mds create node1
 ceph osd pool create cephfs_data 64
@@ -92,21 +96,23 @@ mkdir -p /mnt/cephfs
 ceph-fuse /mnt/cephfs
 ```
 
-16. Deploying the Ceph Dashboard. 
+13. Deploying the Ceph Dashboard. 
 
 ```bash
 # install `ceph-mgr-dashboard` on the MGR node.
-apt install -y ceph-mgr-dashboard
+ssh node1 apt update
+ssh node1 apt install -y ceph-mgr-dashboard
 
-# from the admin nodes,
-ceph mgr module enable dashboard
+# from the admin node,
+ceph mgr module enable dashboard --force
 ceph config set mgr mgr/dashboard/ssl false
-ceph dashboard ac-user-create admin secret administrator --force-password
+echo "secret" > /tmp/file
+ceph dashboard ac-user-create admin -i /tmp/file administrator --force-password
 
 # Then navigate to :8080 of the MGR node and use admin as username and secret as password to login
 ```
 
-17. Setting up Monitoring using Prometheus and Grafana.
+14. Setting up Monitoring using Prometheus and Grafana.
 
 ```bash
 # enable prometheus on MGR
@@ -124,7 +130,7 @@ scrape_configs:
   - job_name: 'prometheus_master'
     scrape_interval: 5s
     static_configs:
-      - targets: ['ms0826.utah.cloudlab.us:9283']
+      - targets: ['<node1-hostname>:9283']
 EOF
 
 # start the prometheus and grafana containers

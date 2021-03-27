@@ -18,11 +18,10 @@ ceph-fuse /mnt/cephfs
 ssh node1 apt update
 ssh node1 apt install -y ceph-mgr-dashboard
 
-ssh node1 ceph mgr module enable dashboard --force
-ssh node1 ceph config set mgr mgr/dashboard/ssl false
-echo "secret" > file
-scp file node1:/tmp/file
-ssh node1 ceph dashboard ac-user-create admin -i /tmp/file administrator --force-password
+ceph mgr module enable dashboard --force
+ceph config set mgr mgr/dashboard/ssl false
+echo "secret" > /tmp/file
+ceph dashboard ac-user-create admin -i /tmp/file administrator --force-password
 
 # guess we are done !
 ceph mgr services
