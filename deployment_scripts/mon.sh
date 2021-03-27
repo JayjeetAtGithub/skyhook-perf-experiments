@@ -46,13 +46,13 @@ ceph-deploy mgr create node1
 cat >> ceph.conf << EOF
 mon allow pool delete = true
 osd class load list = *
-osd op threads = 16
+osd op threads = 4
 osd objectstore = memstore
 memstore device bytes = 10737418240
 EOF
 
 # push the updated ceph.conf to all the nodes
-ceph-deploy --overwrite-conf config push node{1..16}
+ceph-deploy --overwrite-conf config push node{1..4}
 
 # At this point, the ceph cluster MONs should be in quorum and we should
 # be able to connect to the cluster
@@ -61,8 +61,13 @@ cp ceph.client.admin.keyring  /etc/ceph/ceph.client.admin.keyring
 ceph -s
 
 # copy the osd keyrings to the nodes
-for i in {1..16}; do
+for i in {1..4}; do
   scp ./deployment/ceph.bootstrap-osd.keyring node${i}:/etc/ceph/ceph.keyring
   scp ./deployment/ceph.bootstrap-osd.keyring node${i}:/var/lib/ceph/bootstrap-osd/ceph.keyring
   scp ./memstore_osd.sh node${i}:/users/noobjc/
+done
+
+# to start the OSDs
+for i in {1..4}; do
+  ssh node${i} /users/noobjc/memstore_osd.sh
 done
