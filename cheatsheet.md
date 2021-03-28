@@ -66,4 +66,10 @@ done
 
 # 
 export LD_LIBRARY_PATH=/usr/local/lib
+
+
+# In cases of major OSD crashes,
+systemctl disable ceph-osd@<x>
+systemctl enable ceph-osd@<x>
+systemctl start ceph-osd@<x>
 ```
