@@ -29,3 +29,5 @@ for i in {1..4}; do
   scp libarrow* node${i}:/usr/lib/
   scp libparquet* node${i}:/usr/lib/
 done
+
+export LD_LIBRARY_PATH=/usr/local/lib
