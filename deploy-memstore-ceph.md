@@ -42,7 +42,7 @@ ceph-deploy install --release octopus node1 node2 node3 node4
 ceph-deploy mon create-initial
 ```
 
-7. Push the `ceph.conf` to all the MON nodes.
+7. Push the `ceph.conf` to all the MON and MGR nodes.
 ```bash
 ceph-deploy admin node1 node2 node3
 ```
