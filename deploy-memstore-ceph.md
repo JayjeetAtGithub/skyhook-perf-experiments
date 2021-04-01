@@ -34,7 +34,7 @@ ceph-deploy new node1 node2 node3
 
 5. Install `ceph` dependencies on all the nodes.
 ```bash
-ceph-deploy install --release octopus node1 node2 node3 node4 node5 node6 node7 node8
+ceph-deploy install --release octopus node1 node2 node3 node4
 ```
 
 6. Start the MON daemons.
