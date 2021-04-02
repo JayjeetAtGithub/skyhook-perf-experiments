@@ -34,7 +34,7 @@ ceph-deploy new node1 node2 node3
 
 5. Install `ceph` dependencies on all the nodes.
 ```bash
-ceph-deploy install --release octopus node1 node2 node3 node4
+ceph-deploy install --release octopus node{1..4}
 ```
 
 6. Start the MON daemons.
@@ -77,7 +77,7 @@ ceph -s
 for i in {1..4}; do
   scp ceph.bootstrap-osd.keyring node${i}:/etc/ceph/ceph.keyring
   scp ceph.bootstrap-osd.keyring node${i}:/var/lib/ceph/bootstrap-osd/ceph.keyring
-  scp deployment_scripts/memstore_osd.sh node${i}:/users/noobjc/memstore_osd.sh
+  scp ../memstore_osd.sh node${i}:/users/noobjc/memstore_osd.sh
 done
 
 # start OSDs. for each OSD node, run the deploy_osd.sh script
