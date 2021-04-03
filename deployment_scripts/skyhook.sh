@@ -31,3 +31,4 @@ for i in {1..4}; do
 done
 
 export LD_LIBRARY_PATH=/usr/local/lib
+cp /usr/local/lib/libparq* /usr/lib/

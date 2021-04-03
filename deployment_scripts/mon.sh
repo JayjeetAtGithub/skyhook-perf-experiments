@@ -36,7 +36,7 @@ ceph-deploy install --release octopus node1 node2 node3 node4
 # start the MONs
 ceph-deploy mon create-initial
 
-# push the ceph.conf to all the MON nodes
+# push the ceph.conf to all the MON  and  MGR nodes
 ceph-deploy admin node1 node2 node3
 
 # deploy a MGR
