@@ -1,6 +1,9 @@
 #!/bin/bash
 set -eu
 
+# usage:
+# ./populate.sh /users/noobjc/4MB.parquet dataset/4MB.parquet 0 200
+
 source=${1}
 destination=${2}
 start=${3}
@@ -22,6 +25,5 @@ sleep 5
 # For 64MB:  67108864 object size
 
 # Write the data incrementally to prevent the cluster go into HEALTH_ERR state
-# ./pop.sh /users/noobjc/4MB.parquet dataset/4MB.parquet 0 200
-# ./pop.sh /users/noobjc/4MB.parquet dataset/4MB.parquet 201 500
+# ./populate.sh /users/noobjc/4MB.parquet dataset/4MB.parquet 0 200
 # ...so on and so forth
