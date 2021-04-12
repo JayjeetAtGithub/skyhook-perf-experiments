@@ -23,6 +23,8 @@ Threads used in experiment: 64 (4 * 16 cores/node)
 32MB: 1,400,000 * 860
 64MB: 2,600,000 * 460
 ```
+129 byte rows
+154.8 GB
 
 ### Total Rows in Dataset and Dataset Size
 
