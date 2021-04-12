@@ -17,11 +17,11 @@ Threads used in experiment: 64 (4 * 16 cores/node)
 ### Number of Rows in Files of Different Sizes
 **TODO:** Do experiments with 64MB and 128MB
 ```
-4MB: 200,000
-8MB: 440,000
-16MB: 800,000
-32MB: 1,400,000
-64MB: 2,600,000
+4MB: 200,000 * 6000
+8MB: 440,000 * 2800
+16MB: 800,000 * 1500
+32MB: 1,400,000 * 860
+64MB: 2,600,000 * 460
 ```
 
 ### Total Rows in Dataset and Dataset Size
