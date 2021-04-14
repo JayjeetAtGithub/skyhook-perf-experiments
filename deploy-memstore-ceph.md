@@ -34,7 +34,7 @@ ceph-deploy new node1 node2 node3
 
 5. Install `ceph` dependencies on all the nodes.
 ```bash
-ceph-deploy install --release octopus node{1..4}
+ceph-deploy install --release octopus node9
 ```
 
 6. Start the MON daemons.
@@ -62,7 +62,7 @@ osd op threads = 16
 ```
 
 ```bash
-ceph-deploy --overwrite-conf config push node{1..4}
+ceph-deploy --overwrite-conf config push node{1..32}
 ```
 10. At this point, we have the cluster up and running without the OSDs. To check the status,
 ```bash
@@ -89,8 +89,10 @@ done
 12. Deploying a CephFS.
 ```bash
 ceph-deploy mds create node1
-ceph osd pool create cephfs_data 64
-ceph osd pool create cephfs_metadata 64
+ceph osd pool create cephfs_data 16
+ceph osd pool create cephfs_metadata 16
+ceph osd pool create device_health_metrics 16
+
 ceph fs new cephfs cephfs_metadata cephfs_data
 mkdir -p /mnt/cephfs
 ceph-fuse /mnt/cephfs
