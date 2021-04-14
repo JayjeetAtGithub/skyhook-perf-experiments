@@ -22,17 +22,18 @@ if __name__ == "__main__":
             nodes.append(hostname)
 
     target_nodes = nodes[0:9]
-    # target_nodes.append(nodes[28])
+    target_nodes.remove("ms1236.utah.cloudlab.us")
+    target_nodes.append("ms1229.utah.cloudlab.us")
 
     for node in target_nodes:
         # os.system(f'ssh noobjc@{node} sudo apt update')
         # os.system(f'ssh noobjc@{node} sudo apt install -y python3-dev python3-pip')
         # os.system(f'ssh noobjc@{node} pip3 install psutil')
         print("Copying script to ", node)
-        subprocess.check_output(f'scp avg_cpu.py noobjc@{node}:/users/noobjc', shell=True)
+        # subprocess.check_output(f'scp avg_cpu.py noobjc@{node}:/users/noobjc', shell=True)
 
     total_cpu = 0
-    with ThreadPoolExecutor(max_workers=16) as ex:
+    with ThreadPoolExecutor(max_workers=20) as ex:
         futures = {ex.submit(do_record, "noobjc", node) for node in target_nodes}
         for future in as_completed(futures):
             try:

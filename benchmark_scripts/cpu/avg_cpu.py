@@ -12,7 +12,7 @@ if __name__ == "__main__":
     data = []
 
     curr_time = 0
-    end_time = curr_time + 180
+    end_time = curr_time + 200
     while curr_time < end_time:
         curr_usage = sum(psutil.cpu_percent(percpu=True))
         data.append(curr_usage)
