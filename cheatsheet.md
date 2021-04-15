@@ -64,9 +64,8 @@ for i in {1..3}; do
   ssh node${i} systemctl restart ceph-mon.target
 done
 
-# 
+# set the LD_LIBRARY_PATH variable
 export LD_LIBRARY_PATH=/usr/local/lib
-
 
 # In cases of major OSD crashes,
 systemctl disable ceph-osd@<x>
