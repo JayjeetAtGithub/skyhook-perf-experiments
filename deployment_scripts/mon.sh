@@ -46,7 +46,7 @@ ceph-deploy mgr create node1
 cat >> ceph.conf << EOF
 mon allow pool delete = true
 osd class load list = *
-osd op threads = 4
+osd op threads = 8
 osd objectstore = memstore
 memstore device bytes = 10737418240
 EOF
