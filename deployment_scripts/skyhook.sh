@@ -1,6 +1,9 @@
 #!/bin/bash
 set -eu
 
+SNODE=$1
+ENODE=$2
+
 apt update 
 apt install -y python3 python3-pip python3-venv python3-numpy cmake libradospp-dev rados-objclass-dev # 20.04
 
@@ -24,7 +27,7 @@ python3 setup.py build_ext --inplace --bundle-arrow-cpp bdist_wheel
 pip3 install dist/*.whl
 
 cd /tmp/arrow/cpp/debug/debug
-for i in {1..4}; do
+for ((i=$SNODE; i<=$ENODE; i++)); do
   scp libcls* node${i}:/usr/lib/rados-classes/
   scp libarrow* node${i}:/usr/lib/
   scp libparquet* node${i}:/usr/lib/

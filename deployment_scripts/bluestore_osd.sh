@@ -3,7 +3,9 @@ set -eu
 
 cd deployment/
 
-for i in {1..4}; do
+SNODE=$1
+ENODE=$2
+
+for ((i=$SNODE; i<=$ENODE; i++)); do
     ceph-deploy osd create --data /dev/nvme0n1p4 node${i}
-    sleep 2
 done

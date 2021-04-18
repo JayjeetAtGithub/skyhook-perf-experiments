@@ -23,7 +23,3 @@ sleep 5
 # For 16MB:  16777216 object size
 # For 32MB:  33554432 object size
 # For 64MB:  67108864 object size
-
-# Write the data incrementally to prevent the cluster go into HEALTH_ERR state
-# ./populate.sh /users/noobjc/4MB.parquet dataset/4MB.parquet 0 200
-# ...so on and so forth

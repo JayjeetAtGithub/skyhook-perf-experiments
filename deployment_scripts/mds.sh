@@ -7,8 +7,8 @@ cd deployment/
 
 # deploy MDS and ceph fs
 ceph-deploy mds create node1
-ceph osd pool create cephfs_data 64
-ceph osd pool create cephfs_metadata 64
+ceph osd pool create cephfs_data 16
+ceph osd pool create cephfs_metadata 16
 ceph fs new cephfs cephfs_metadata cephfs_data
 mkdir -p /mnt/cephfs
 sleep 5
