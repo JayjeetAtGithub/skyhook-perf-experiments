@@ -36,7 +36,7 @@ for i in {0..3}; do
 done
 
 # clearing volumes
-ceph-volume lvm zap /dev/sdb /dev/sdc --destroy
+ceph-volume lvm zap /dev/nvme0n1p4 --destroy
 
 # creating osd on disk
 ceph-volume lvm batch /dev/sdc
