@@ -39,7 +39,7 @@ done
 ceph-volume lvm zap /dev/nvme0n1p4 --destroy
 
 # creating osd on disk
-ceph-volume lvm batch /dev/sdc
+ceph-volume lvm batch /dev/nvme0n1p4
 
 # restart daemons
 systemctl restart ceph-mon.target
