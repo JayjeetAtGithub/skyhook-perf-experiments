@@ -7,9 +7,10 @@
 ./deployment_scripts/skyhook.sh 1 4 
 ```
 
-2. Populate data by running [populate.sh](./deployment_scripts/populate.sh) like this. Refer to the stripe sizes for different sized files written at the end of the script.
+2. Populate data by running [populate.sh](./deployment_scripts/populate.sh) like this. Refer to the stripe sizes for different sized files written at the end of the script. For example, to write 460 64MB files,
 ```
-./populate.sh /users/noobjc/4MB.parquet dataset/4MB.parquet 0 200 4194304
+mkdir -p /mnt/cephfs/dataset
+./populate.sh /users/noobjc/4MB.parquet /mnt/cephfs/dataset/4MB.parquet 0 460 67108864
 ```
 
 3. Compile [bench.cc](./benchmark_scripts/bench.cc) and run it like this.

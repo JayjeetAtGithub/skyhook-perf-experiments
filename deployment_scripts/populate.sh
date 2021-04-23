@@ -2,7 +2,7 @@
 set -eu
 
 # usage:
-# ./populate.sh /users/noobjc/4MB.parquet dataset/4MB.parquet 0 200 67108864
+# ./populate.sh /users/noobjc/4MB.parquet /mnt/cephfs/dataset/4MB.parquet 0 200 67108864
 
 source=${1}
 destination=${2}
