@@ -9,7 +9,7 @@ import pandas
 
 
 if len(sys.argv) < 5:
-    print("usage: ./bench.py <format(pq/rqp)> <selectivity(1/10/100)> <iterations> <dataset>")
+    print("usage: ./bench.py <format(pq/rpq)> <selectivity(1/10/100)> <iterations> <dataset>")
     sys.exit(0)
 
 fmt = str(sys.argv[1])

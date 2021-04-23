@@ -1,12 +1,13 @@
 import xmltodict
 import json
 import os
+import sys
 import multiprocessing as mp
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import subprocess
 
-def do_record(username, hostname):
-    cmd = f'ssh {username}@{hostname} "python3 /users/{username}/avg_cpu.py"'
+def do_record(username, hostname, dur):
+    cmd = f'ssh {username}@{hostname} "python3 /users/{username}/avg_cpu.py {dur}"'
     print(cmd)
     return subprocess.check_output(cmd, shell=True)
 
@@ -21,9 +22,8 @@ if __name__ == "__main__":
             hostname = (dict(dict(dict(node)['services'])['login'][0])['@hostname'])
             nodes.append(hostname)
 
-    target_nodes = nodes[0:9]
+    target_nodes = nodes[0:10]
     target_nodes.remove("ms1236.utah.cloudlab.us")
-    target_nodes.append("ms1229.utah.cloudlab.us")
 
     for node in target_nodes:
         # os.system(f'ssh noobjc@{node} sudo apt update')
@@ -34,7 +34,7 @@ if __name__ == "__main__":
 
     total_cpu = 0
     with ThreadPoolExecutor(max_workers=20) as ex:
-        futures = {ex.submit(do_record, "noobjc", node) for node in target_nodes}
+        futures = {ex.submit(do_record, "noobjc", node, int(sys.argv[1])) for node in target_nodes}
         for future in as_completed(futures):
             try:
                 data = future.result()

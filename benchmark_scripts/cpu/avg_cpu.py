@@ -5,14 +5,14 @@ import sys
 import socket
 
 if __name__ == "__main__":
-    if len(sys.argv) < 1:
+    if len(sys.argv) < 2:
         print("usage: ./record_cpu.py")
         sys.exit(1)
 
     data = []
 
     curr_time = 0
-    end_time = curr_time + 200
+    end_time = curr_time + int(sys.argv[1])
     while curr_time < end_time:
         curr_usage = sum(psutil.cpu_percent(percpu=True))
         data.append(curr_usage)
