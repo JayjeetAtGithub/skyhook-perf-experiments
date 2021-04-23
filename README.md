@@ -3,6 +3,8 @@
 1. Clone this repository.
 ```bash
 git clone https://github.com/JayjeetAtGithub/skyhook-perf-experiments /tmp/skyperf
+cd /tmp/skyperf
+git lfs pull
 ```
 
 2. Install Ceph by running [deploy.sh](./deployment_scripts/deploy.sh).
@@ -18,7 +20,7 @@ git clone https://github.com/JayjeetAtGithub/skyhook-perf-experiments /tmp/skype
 4. Populate data by running [populate.sh](./deployment_scripts/populate.sh) like this. Refer to the stripe sizes for different sized files written at the end of the script. For example, to write 460 64MB files,
 ```
 mkdir -p /mnt/cephfs/dataset
-/tmp/skyperf/deployment_scripts/populate.sh /users/noobjc/4MB.parquet /mnt/cephfs/dataset/4MB.parquet 0 460 67108864
+/tmp/skyperf/deployment_scripts/populate.sh /tmp/skyperf/datasets/64MB.parquet /mnt/cephfs/dataset/64MB.parquet 0 460 67108864
 ```
 
 5. Run the benchmarks. For example,
