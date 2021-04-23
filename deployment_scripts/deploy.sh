@@ -1,6 +1,11 @@
 #!/bin/bash
 set -ex
 
+cat > ~/.ssh/config << EOF
+Host *
+    StrictHostKeyChecking no
+EOF
+
 apt update
 apt install -y python3-venv python3-pip ceph-fuse ceph-common
 
@@ -20,7 +25,11 @@ ceph-deploy admin node{1..3}
 
 ceph-deploy mgr create node1
 
+cat >> ceph.conf << EOF
+mon allow pool delete = true
 osd class load list = *
+osd op threads = 8
+EOF
 
 ceph-deploy --overwrite-conf config push node{1..4}
 
