@@ -24,7 +24,7 @@ cd /tmp/arrow/python
 pip3 install -r requirements-build.txt -r requirements-test.txt
 pip3 install wheel
 python3 setup.py build_ext --inplace --bundle-arrow-cpp bdist_wheel
-pip3 install dist/*.whl
+pip3 install --upgrade dist/*.whl
 
 cd /tmp/arrow/cpp/debug/debug
 for ((i=$SNODE; i<=$ENODE; i++)); do
