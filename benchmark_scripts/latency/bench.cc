@@ -1,27 +1,10 @@
-// Licensed to the Apache Software Foundation (ASF) under one
-// or more contributor license agreements. See the NOTICE file
-// distributed with this work for additional information
-// regarding copyright ownership. The ASF licenses this file
-// to you under the Apache License, Version 2.0 (the
-// "License"); you may not use this file except in compliance
-// with the License. You may obtain a copy of the License at
-//
-// http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing,
-// software distributed under the License is distributed on an
-// "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-// KIND, either express or implied. See the License for the
-// specific language governing permissions and limitations
-// under the License.
-
 #include <arrow/api.h>
 #include <arrow/dataset/dataset.h>
 #include <arrow/dataset/discovery.h>
 #include <arrow/dataset/expression.h>
 #include <arrow/dataset/file_base.h>
-#include <arrow/dataset/file_rados_parquet.h>
 #include <arrow/dataset/file_parquet.h>
+#include <arrow/dataset/file_rados_parquet.h>
 #include <arrow/dataset/scanner.h>
 #include <arrow/filesystem/filesystem.h>
 #include <arrow/filesystem/path_util.h>
@@ -48,21 +31,16 @@ namespace ds = arrow::dataset;
   } while (0);
 
 struct Configuration {
-  // Increase the ds::DataSet by repeating `repeat` times the ds::Dataset.
   size_t repeat = 1;
-
-  // Indicates if the Scanner::ToTable should consume in parallel.
   bool use_threads = true;
 
-  // Indicates to the Scan operator which columns are requested. This
-  // optimization avoid deserializing unneeded columns.
-  std::vector<std::string> projected_columns = {"pickup_at", "dropoff_at",
-                                                "total_amount"};
-
-  // Indicates the filter by which rows will be filtered. This optimization can
-  // make use of partition information and/or file metadata if possible.
-  ds::Expression filter =
+  ds::Expression filter_1 =
       ds::greater(ds::field_ref("total_amount"), ds::literal(69.0f));
+
+  ds::Expression filter_10 =
+      ds::greater(ds::field_ref("total_amount"), ds::literal(27.0f));
+
+  ds::Expression filter_100 = ds::literal(true);
 
   ds::InspectOptions inspect_options{};
   ds::FinishOptions finish_options{};
@@ -86,19 +64,16 @@ std::shared_ptr<fs::FileSystem> GetFileSystemFromUri(const std::string& uri,
 std::shared_ptr<ds::Dataset> GetDatasetFromDirectory(
     std::shared_ptr<fs::FileSystem> fs, std::shared_ptr<ds::ParquetFileFormat> format,
     std::string dir) {
-  // Find all files under `path`
+
   fs::FileSelector s;
   s.base_dir = dir;
   s.recursive = true;
 
   ds::FileSystemFactoryOptions options;
-  // The factory will try to build a child dataset.
   auto factory = ds::FileSystemDatasetFactory::Make(fs, s, format, options).ValueOrDie();
 
-  // Try to infer a common schema for all files.
   auto schema = factory->Inspect(conf.inspect_options).ValueOrDie();
-  // Caller can optionally decide another schema as long as it is compatible
-  // with the previous one, e.g. `factory->Finish(compatible_schema)`.
+
   auto child = factory->Finish(conf.finish_options).ValueOrDie();
 
   ds::DatasetVector children{conf.repeat, child};
@@ -120,14 +95,12 @@ std::shared_ptr<ds::Dataset> GetDatasetFromFile(
     std::shared_ptr<fs::FileSystem> fs, std::shared_ptr<ds::ParquetFileFormat> format,
     std::string file) {
   ds::FileSystemFactoryOptions options;
-  // The factory will try to build a child dataset.
+
   auto factory =
       ds::FileSystemDatasetFactory::Make(fs, {file}, format, options).ValueOrDie();
 
-  // Try to infer a common schema for all files.
   auto schema = factory->Inspect(conf.inspect_options).ValueOrDie();
-  // Caller can optionally decide another schema as long as it is compatible
-  // with the previous one, e.g. `factory->Finish(compatible_schema)`.
+
   auto child = factory->Finish(conf.finish_options).ValueOrDie();
 
   ds::DatasetVector children;
@@ -156,14 +129,9 @@ std::shared_ptr<ds::Dataset> GetDatasetFromPath(
 }
 
 std::shared_ptr<ds::Scanner> GetScannerFromDataset(std::shared_ptr<ds::Dataset> dataset,
-                                                   std::vector<std::string> columns,
                                                    ds::Expression filter,
                                                    bool use_threads) {
   auto scanner_builder = dataset->NewScan().ValueOrDie();
-
-  /*if (!columns.empty()) {
-    ABORT_ON_FAILURE(scanner_builder->Project(columns));
-  }*/
 
   ABORT_ON_FAILURE(scanner_builder->Filter(filter));
 
@@ -177,24 +145,43 @@ std::shared_ptr<Table> GetTableFromScanner(std::shared_ptr<ds::Scanner> scanner)
 }
 
 int main(int argc, char** argv) {
-  //auto format = std::make_shared<ds::ParquetFileFormat>();
-  auto format = GetFormat();
+  if (argc < 4) {
+          std::cout << "Usage: ./bench [format(pq/rpq)] [selection percentage(100/10/1)] [file:///path/to/dataset]";
+          exit(1);
+  }
 
-  if (argc != 2) {
-    // Fake success for CI purposes.
-    return EXIT_SUCCESS;
+  std::string fmt = argv[1];
+  std::string selectivity = argv[2];
+
+  std::cout << "Using format: " << fmt << "\n";
+  std::cout << "Selectivity: " << selectivity << "\n";
+
+
+  auto format = std::make_shared<ds::ParquetFileFormat>();
+  if (fmt == "rpq") {
+          format = GetFormat();
   }
 
   std::string path;
-  auto fs = GetFileSystemFromUri(argv[1], &path);
+  auto fs = GetFileSystemFromUri(argv[3], &path);
 
   auto dataset = GetDatasetFromPath(fs, format, path);
 
-  auto scanner = GetScannerFromDataset(dataset, conf.projected_columns, conf.filter,
-                                       conf.use_threads);
+  ds::Expression filter_;
+  if (selectivity == "100") {
+    filter_ = conf.filter_100;
+  } else if (selectivity == "10") {
+    filter_ = conf.filter_10;
+  } else {
+    filter_ = conf.filter_1;
+  }
+
+  auto scanner = GetScannerFromDataset(dataset, filter_, conf.use_threads);
 
   auto table = GetTableFromScanner(scanner);
-  std::cout << "Table size: " << table->num_rows() << "\n";
+  std::cout << table->ToString() << "\n";
+  std::cout << "Rows Read: " << table->num_rows() << "\n";
+  std::cout << "Columns Read: " << table->num_columns() << "\n";
 
   return EXIT_SUCCESS;
 }
