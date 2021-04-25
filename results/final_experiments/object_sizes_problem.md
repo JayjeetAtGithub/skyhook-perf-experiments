@@ -23,5 +23,12 @@
 
 # Are the server's slow than the client ??!
 
+# rados parquet
+
+{'deserialize': 3.036315384615386, 'read': 0.009815384615384615, 'just a buffer scan': 389.85893076923077, 'ScanParquetObject': 390.97433076923073, 'serialize': 33.453615384615375}
+{'deserialize': 3.5364000000000004, 'read': 1.0260000000000002, 'just a buffer scan': 3635.4147999999996, 'ScanParquetObject': 3663.8392999999996, 'serialize': 457.7832}
+
+# vanilla parquet
 329.379 + 360.723 + 366.587 + 388.328 + 360.498 = 361.103 * 13 = 4694.339
 2.9889 + 2.95537 + 2.86785 + 2.86721 + 2.97523 = 2930.912
+
