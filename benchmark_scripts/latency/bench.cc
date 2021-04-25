@@ -8,7 +8,7 @@
 #include <arrow/dataset/scanner.h>
 #include <arrow/filesystem/filesystem.h>
 #include <arrow/filesystem/path_util.h>
-
+#include <chrono>
 #include <cstdlib>
 #include <iostream>
 
@@ -16,6 +16,10 @@ using arrow::field;
 using arrow::int16;
 using arrow::Schema;
 using arrow::Table;
+using std::chrono::high_resolution_clock;
+using std::chrono::duration_cast;
+using std::chrono::duration;
+using std::chrono::milliseconds;
 
 namespace fs = arrow::fs;
 
@@ -177,9 +181,14 @@ int main(int argc, char** argv) {
   }
 
   auto scanner = GetScannerFromDataset(dataset, filter_, conf.use_threads);
-
+  
+  auto t1 = high_resolution_clock::now();
   auto table = GetTableFromScanner(scanner);
-  std::cout << table->ToString() << "\n";
+  auto t2 = high_resolution_clock::now();
+  duration<double, std::milli> ms_double = t2 - t1;
+  std::cout << "Tima taken:" << ms_double.count() << "ms\n";
+
+  //std::cout << table->ToString() << "\n";
   std::cout << "Rows Read: " << table->num_rows() << "\n";
   std::cout << "Columns Read: " << table->num_columns() << "\n";
 
