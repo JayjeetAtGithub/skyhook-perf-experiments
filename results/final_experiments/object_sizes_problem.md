@@ -12,7 +12,16 @@
 {'ScanProjectObject': 264.461538462}
 {'ScanParquetObject': 3596.9}
 
-# Reading from memory at once (RPQ)
+# Reading entire Parquet file into memory and then reading from it (RPQ)
 
 {'deserialize': 3.202,              'read': 0.01,                 'ScanParquetObject': 415.526,            'serialize': 33.489}
 {'deserialize': 3.6069999999999998, 'read': 0.018000000000000002, 'ScanParquetObject': 3502.6229999999996, 'serialize': 450.932}
+
+# 
+{'deserialize': 3.5860000000000003, 'read': 0.017, 'just a buffer scan': 3432.2219999999998, 'ScanParquetObject': 3479.4939999999997, 'serialize': 420.88}
+{'deserialize': 3.467, 'read': 0.01, 'just a buffer scan': 423.00100000000003, 'ScanParquetObject': 424.04900000000004, 'serialize': 36.443000000000005}
+
+# Are the server's slow than the client ??!
+
+329.379 + 360.723 + 366.587 + 388.328 + 360.498 = 361.103 * 13 = 4694.339
+2.9889 + 2.95537 + 2.86785 + 2.86721 + 2.97523 = 2930.912
