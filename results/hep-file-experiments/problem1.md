@@ -27,10 +27,10 @@ The `pq.read_table` uses Dataset API under the covers and always set the paralle
 |nyc      | pq     | 16           | 35.60   |
 |nyc      | rpq    | 32           | 75.104  |
 |nyc      | pq     | 32           | 35.768  |
-|hep      | rpq    | 16           | 234.323 | [fig1](./fig1.png) |
-|hep      | pq     | 16           | 129.854 | [fig2](./fig2.png) |
-|hep      | rpq    | 32           | 217.983 | [fig3](./fig3.png) |
-|hep      | pq     | 32           | 164.850 | [fig4](./fig4.png) |
+|hep      | rpq    | 16           | 234.323 | [fig](./fig1.png) |
+|hep      | pq     | 16           | 129.854 | [fig](./fig2.png) |
+|hep      | rpq    | 32           | 217.983 | [fig](./fig3.png) |
+|hep      | pq     | 32           | 164.850 | [fig](./fig4.png) |
 
 
 ##  dataset api experiments, 4 osd, 200 32 MB files, 1 row group, 100%
@@ -42,10 +42,10 @@ The `pq.read_table` uses Dataset API under the covers and always set the paralle
 |nyc      | pq     | 16           |  37.157 |
 |nyc      | rpq    | 32           |  45.572 |
 |nyc      | pq     | 32           |  36.220 |
-|hep      | rpq    | 16           | 141.748 | [fig1](./4node_hep_rpq_16.png) |
-|hep      | pq     | 16           | 132.116 | [fig2](./4node_hep_pq_16.png) |
-|hep      | rpq    | 32           | 111.259 | [fig3](./4node_hep_rpq_32.png) |
-|hep      | pq     | 32           | 165.259 | [fig4](./4node_hep_pq_32.png) |
+|hep      | rpq    | 16           | 141.748 | [fig](./4node_hep_rpq_16.png) |
+|hep      | pq     | 16           | 132.116 | [fig](./4node_hep_pq_16.png) |
+|hep      | rpq    | 32           | 111.259 | [fig](./4node_hep_rpq_32.png) |
+|hep      | pq     | 32           | 165.259 | [fig](./4node_hep_pq_32.png) |
 
 
 ## coffea experiments, 4 osd, 2.5%
