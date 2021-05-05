@@ -16,6 +16,9 @@
 | nyc yellow taxi data       | 31.323 MB    | 181.6+ MB        | 0.009751 | 1400000  | 17      |  23800000 |     1      | 10.404520034790039 |
 | nano_dy data               | 31.323 MB    | 153.4+ MB        | 0.859448 | 35000    | 1500    |  52500000 |     1      | 14.627225637435913 |
 
+
+The `pq.read_table` uses Dataset API under the covers and always set the parallel column reads to True if a single file is scanned. 
+
 ### parallel tests, single osd, 100%, 
 
 | dataset | format |  parallelism | time (s)|
