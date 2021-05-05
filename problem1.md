@@ -19,15 +19,22 @@
 
 The `pq.read_table` uses Dataset API under the covers and always set the parallel column reads to True if a single file is scanned. 
 
-### parallel tests, single osd, 100%, 
+## dataset api experiments, 1 osd, 100%, 
 
-| dataset | format |  parallelism | time (s)|
-|---------|--------|--------------|---------|
+| dataset | format |  parallelism | time (s)|  cpu               |
+|---------|--------|--------------|---------|--------------------|
 |nyc      | rpq    | 16           | 77.68   |
 |nyc      | pq     | 16           | 35.60   |
 |nyc      | rpq    | 32           | 75.104  |
 |nyc      | pq     | 32           | 35.768  |
-|hep      | rpq    | 16           | 234.323 | fig1
-|hep      | pq     | 16           | 129.854 | fig2
-|hep      | rpq    | 32           | 217.983 | fig3
-|hep      | pq     | 32           | 164.850 | fig4
+|hep      | rpq    | 16           | 234.323 | [fig1](./fig1.png) |
+|hep      | pq     | 16           | 129.854 | [fig2](./fig2.png) |
+|hep      | rpq    | 32           | 217.983 | [fig3](./fig3.png) |
+|hep      | pq     | 32           | 164.850 | [fig4](./fig4.png) |
+
+## coffea experiments, 4 osd, 2.5%
+
+|format | time | cpu |
+|----|-----|----|
+| pq | 103s | [dask_pq](./dask_pq.png) |
+| rpq | 122s | [dask_rpq](./dask_rpq.png) |
