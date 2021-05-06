@@ -51,10 +51,10 @@ The `pq.read_table` uses Dataset API under the covers and always set the paralle
 
 | dataset | format |  parallelism | time (s)|  cpu               |
 |---------|--------|--------------|---------|--------------------|
-|nyc      | rpq    | 16           |  45.077 |
-|nyc      | pq     | 16           | halted  |
-|nyc      | rpq    | 32           |  42.823 |
-|nyc      | pq     | 32           | halted  |   
+|nyc      | rpq    | 16           |  45.077 | [fig](./parallel_col_2.png)
+|nyc      | pq     | 16           | halted  |  |
+|nyc      | rpq    | 32           |  42.823 | [fig](./parallel_col_2.png)
+|nyc      | pq     | 32           | halted  |  |
 |hep      | rpq    | 16           | 66.8810 | [fig](./parallel_col_1.png) |
 |hep      | pq     | 16           | halted  |  |
 |hep      | rpq    | 32           | 57.9    | [fig](./parallel_col_1.png) |
