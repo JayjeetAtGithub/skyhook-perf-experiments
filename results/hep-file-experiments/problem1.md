@@ -33,7 +33,7 @@ The `pq.read_table` uses Dataset API under the covers and always set the paralle
 |hep      | pq     | 32           | 164.850 | [fig](./fig4.png) |
 
 
-##  dataset api experiments, 4 osd, 200 32 MB files, 1 row group, 100%
+##  dataset api experiments, 8th 4 osd, 200 32 MB files, 1 row group, 100%
 
 
 | dataset | format |  parallelism | time (s)|  cpu               |
@@ -47,6 +47,18 @@ The `pq.read_table` uses Dataset API under the covers and always set the paralle
 |hep      | rpq    | 32           | 111.259 | [fig](./4node_hep_rpq_32.png) |
 |hep      | pq     | 32           | 165.259 | [fig](./4node_hep_pq_32.png) |
 
+## dataset api experiments (parallel col), 8th 4 osd, 200 32MB files, 1 row group, 100%
+
+| dataset | format |  parallelism | time (s)|  cpu               |
+|---------|--------|--------------|---------|--------------------|
+|nyc      | rpq    | 16           |  45.077 |
+|nyc      | pq     | 16           | halted  |
+|nyc      | rpq    | 32           |  42.823 |
+|nyc      | pq     | 32           | halted  |   
+|hep      | rpq    | 16           | 66.8810 | [fig](./parallel_col_1.png) |
+|hep      | pq     | 16           | halted  |  |
+|hep      | rpq    | 32           | 57.9    | [fig](./parallel_col_1.png) |
+|hep      | pq     | 32           | halted  |  |
 
 ## coffea experiments, 4 osd, 2.5%
 
