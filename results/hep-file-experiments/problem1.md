@@ -1,8 +1,7 @@
-# file size
+# observations 
+* single column reads are slower
 
-* read using Arrow Dataset API
-* sequentially read
-* same file read 10 times with caches cleaned in between
+# sequential experiments (same file read 10 times with caches cleaned in between)
 
 ## without parallel column reads
 | file type                  | size (MB)    | memory size (MB) |  metadata size (MB)  |  rows    | columns | cells     | row groups | time (s)           |
@@ -18,6 +17,8 @@
 
 
 The `pq.read_table` uses Dataset API under the covers and always set the parallel column reads to True if a single file is scanned. 
+
+# parallel experiments
 
 ## dataset api experiments, 1 osd, 200 32MB files, 1 row group, 100%
 
