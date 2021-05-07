@@ -23,7 +23,7 @@ mkdir -p /mnt/cephfs/dataset
 /tmp/skyperf/deployment_scripts/populate.sh /tmp/skyperf/datasets/64MB.parquet /mnt/cephfs/dataset/64MB.parquet 0 460 67108864
 ```
 
-Doing this will write files with names, 64MB.parquet.0, 64MB.parquet.1, etc.
+Doing this will write 460 files with names, 64MB.parquet.0, 64MB.parquet.1, etc. with stripe unit of 67108864 bytes.
 
 5. Run benchmarks. 
 With C++,
