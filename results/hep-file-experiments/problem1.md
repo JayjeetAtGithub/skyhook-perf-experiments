@@ -71,7 +71,7 @@ The `pq.read_table` uses Dataset API under the covers and always set the paralle
 | dataset | format |  parallelism | time (s)|  cpu                        |
 |---------|--------|--------------|---------|-----------------------------|
 |nyc      | rpq    | 16           |  37.553 | [fig](https://snapshot.raintank.io/dashboard/snapshot/dTMBqNbujLwGdJjled7LpKn6Uuzu1boU) |
-|nyc      | pq     | 16           |  40.480 | [fig] https://snapshot.raintank.io/dashboard/snapshot/ws325lMK61OgbWqs8Arsq0FTVGwwVu6F                             |
+|nyc      | pq     | 16           |  40.480 | [fig](https://snapshot.raintank.io/dashboard/snapshot/ws325lMK61OgbWqs8Arsq0FTVGwwVu6F)                             |
 |nyc      | rpq    | 32           |  37.289 | [fig](https://snapshot.raintank.io/dashboard/snapshot/dTMBqNbujLwGdJjled7LpKn6Uuzu1boU) |
 |nyc      | pq     | 32           | 43.459  | [fig](https://snapshot.raintank.io/dashboard/snapshot/ws325lMK61OgbWqs8Arsq0FTVGwwVu6F)                            |
 |hep      | rpq    | 16           | 68.759  | [fig](https://snapshot.raintank.io/dashboard/snapshot/dTMBqNbujLwGdJjled7LpKn6Uuzu1boU) |
