@@ -3,18 +3,23 @@
 
 # sequential experiments (same file read 10 times with caches cleaned in between)
 
-## without parallel column reads
+## vanilla parquet, without parallel column reads
 | file type                  | size (MB)    | memory size (MB) |  metadata size (MB)  |  rows    | columns | cells     | row groups | time (s)           |
 | -------------------------- | ------------ | ---------------- |---|--------- | ------- | --------- | ---------- | ------------------ |
 | nyc yellow taxi data       | 31.323 MB    | 181.6+ MB        | 0.009751 | 1400000  | 17      |  23800000 |     1      | 16.469784259796143 |
 | nano_dy data               | 31.323 MB    | 153.4+ MB        | 0.859448 | 35000    | 1500    |  52500000 |     1      | 59.270118951797485 |
 
-## with parallel column reads
+## vanilla parquet, with parallel column reads
 | file type                  | size (MB)    | memory size (MB) |  metadata size (MB)  |  rows    | columns | cells     | row groups | time (s)           |
 | -------------------------- | ------------ | ---------------- |---|--------- | ------- | --------- | ---------- | ------------------ |
 | nyc yellow taxi data       | 31.323 MB    | 181.6+ MB        | 0.009751 | 1400000  | 17      |  23800000 |     1      | 10.404520034790039 |
 | nano_dy data               | 31.323 MB    | 153.4+ MB        | 0.859448 | 35000    | 1500    |  52500000 |     1      | 14.627225637435913 |
 
+## rados parquet, with parallel column reads
+| file type                  | size (MB)    | memory size (MB) |  metadata size (MB)  |  rows    | columns | cells     | row groups | time (s)           |
+| -------------------------- | ------------ | ---------------- |---|--------- | ------- | --------- | ---------- | ------------------ |
+| nyc yellow taxi data       | 31.323 MB    | 181.6+ MB        | 0.009751 | 1400000  | 17      |  23800000 |     1      | 17.732871770858765 |
+| nano_dy data               | 31.323 MB    | 153.4+ MB        | 0.859448 | 35000    | 1500    |  52500000 |     1      | 25.027242183685303 |
 
 The `pq.read_table` uses Dataset API under the covers and always set the parallel column reads to True if a single file is scanned. 
 
@@ -66,13 +71,13 @@ The `pq.read_table` uses Dataset API under the covers and always set the paralle
 | dataset | format |  parallelism | time (s)|  cpu                        |
 |---------|--------|--------------|---------|-----------------------------|
 |nyc      | rpq    | 16           |  37.553 | [fig](https://snapshot.raintank.io/dashboard/snapshot/dTMBqNbujLwGdJjled7LpKn6Uuzu1boU) |
-|nyc      | pq     | 16           |         |                             |
+|nyc      | pq     | 16           |  40.480 | [fig] https://snapshot.raintank.io/dashboard/snapshot/ws325lMK61OgbWqs8Arsq0FTVGwwVu6F                             |
 |nyc      | rpq    | 32           |  37.289 | [fig](https://snapshot.raintank.io/dashboard/snapshot/dTMBqNbujLwGdJjled7LpKn6Uuzu1boU) |
-|nyc      | pq     | 32           |         |                             |
+|nyc      | pq     | 32           | 43.459  | [fig](https://snapshot.raintank.io/dashboard/snapshot/ws325lMK61OgbWqs8Arsq0FTVGwwVu6F)                            |
 |hep      | rpq    | 16           | 68.759  | [fig](https://snapshot.raintank.io/dashboard/snapshot/dTMBqNbujLwGdJjled7LpKn6Uuzu1boU) |
-|hep      | pq     | 16           |         |                             |
+|hep      | pq     | 16           | 136.209 | [fig](https://snapshot.raintank.io/dashboard/snapshot/KNBHkQ9rSnBaXLdKh1oUjti14t2ej0dx)                            |
 |hep      | rpq    | 32           | 68.636  | [fig](https://snapshot.raintank.io/dashboard/snapshot/dTMBqNbujLwGdJjled7LpKn6Uuzu1boU) |
-|hep      | pq     | 32           |         |                             |
+|hep      | pq     | 32           | 135.286 | [fig](https://snapshot.raintank.io/dashboard/snapshot/KNBHkQ9rSnBaXLdKh1oUjti14t2ej0dx)                            |
 
 ## coffea experiments, 4 osd, 2.5%
 
