@@ -25,7 +25,7 @@ mkdir -p /mnt/cephfs/dataset
 
 Doing this will write files with names, 64MB.parquet.0, 64MB.parquet.1, etc.
 
-5. Run the benchmark tools. 
+5. Run benchmarks. 
 With C++,
 ```bash
 g++ /tmp/skyperf/benchmark_scripts/bench.cc -larrow -larrow_dataset -lparquet -o bench
