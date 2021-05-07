@@ -23,7 +23,24 @@ mkdir -p /mnt/cephfs/dataset
 /tmp/skyperf/deployment_scripts/populate.sh /tmp/skyperf/datasets/64MB.parquet /mnt/cephfs/dataset/64MB.parquet 0 460 67108864
 ```
 
-5. Run the benchmarks. For example,
+5. Run the benchmark tools. 
+
+With Python,
 ```
-python3 /tmp/skyperf/benchmark_scripts/auto.py rpq 10 1 /mnt/cephfs/dataset
+python3 /tmp/skyperf/benchmark_scripts/bench.py [format(pq/rpq)] [selectivity] [iterations] [/path/to/dataset]
+```
+
+With C++,
+```
+g++ /tmp/skyperf/benchmark_scripts/bench.cc -larrow -larrow_dataset -lparquet -o bench
+./bench [format(pq/rpq)] [selectivity] file:///[/path/to/dataset]
+```
+
+For example,
+```
+# with Python
+python3 /tmp/skyperf/benchmark_scripts/bench.py rpq 100 1 /mnt/cephfs/dataset
+
+# with C++
+./bench rpq 100 file:///mnt/cephfs/dataset 
 ``` 
