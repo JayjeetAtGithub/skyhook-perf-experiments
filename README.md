@@ -18,29 +18,21 @@ git lfs pull
 ```
 
 4. Populate data by running [populate.sh](./deployment_scripts/populate.sh) like this. Refer to the stripe sizes for different sized files written at the end of the script. For example, to write 460 64MB files,
-```
+```bash
 mkdir -p /mnt/cephfs/dataset
 /tmp/skyperf/deployment_scripts/populate.sh /tmp/skyperf/datasets/64MB.parquet /mnt/cephfs/dataset/64MB.parquet 0 460 67108864
 ```
 
+Doing this will write files with names, 64MB.parquet.0, 64MB.parquet.1, etc.
+
 5. Run the benchmark tools. 
-
-With Python,
-```
-python3 /tmp/skyperf/benchmark_scripts/bench.py [format(pq/rpq)] [selectivity] [iterations] [/path/to/dataset]
-```
-
 With C++,
-```
+```bash
 g++ /tmp/skyperf/benchmark_scripts/bench.cc -larrow -larrow_dataset -lparquet -o bench
 ./bench [format(pq/rpq)] [selectivity] file:///[/path/to/dataset]
 ```
 
 For example,
-```
-# with Python
-python3 /tmp/skyperf/benchmark_scripts/bench.py rpq 100 1 /mnt/cephfs/dataset
-
-# with C++
+```bash
 ./bench rpq 100 file:///mnt/cephfs/dataset 
 ``` 
