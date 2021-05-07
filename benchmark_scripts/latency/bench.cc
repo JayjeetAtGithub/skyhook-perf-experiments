@@ -150,7 +150,7 @@ std::shared_ptr<Table> GetTableFromScanner(std::shared_ptr<ds::Scanner> scanner)
 
 int main(int argc, char** argv) {
   if (argc < 4) {
-          std::cout << "Usage: ./bench [format(pq/rpq)] [selection percentage(100/10/1)] [file:///path/to/dataset]";
+          std::cout << "Usage: ./bench [format(pq/rpq)] [selection percentage(100/10/1)] [file:///path/to/dataset]\n";
           exit(1);
   }
 
@@ -187,8 +187,6 @@ int main(int argc, char** argv) {
   auto t2 = high_resolution_clock::now();
   duration<double, std::milli> ms_double = t2 - t1;
   std::cout << "Tima taken:" << ms_double.count() << "ms\n";
-
-  //std::cout << table->ToString() << "\n";
   std::cout << "Rows Read: " << table->num_rows() << "\n";
   std::cout << "Columns Read: " << table->num_columns() << "\n";
 
