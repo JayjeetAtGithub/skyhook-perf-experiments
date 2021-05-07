@@ -53,7 +53,7 @@ The `pq.read_table` uses Dataset API under the covers and always set the paralle
 |hep      | rpq    | 32           | 111.259 | [fig](./4node_hep_rpq_32.png) |
 |hep      | pq     | 32           | 165.259 | [fig](./4node_hep_pq_32.png) |
 
-## dataset api experiments (parallel col), 8th 4 osd, 200 32MB files, 1 row group, 100%
+<!-- ## dataset api experiments (parallel col), 8th 4 osd, 200 32MB files, 1 row group, 100%
 
 | dataset | format |  parallelism | time (s)|  cpu               |
 |---------|--------|--------------|---------|--------------------|
@@ -64,7 +64,7 @@ The `pq.read_table` uses Dataset API under the covers and always set the paralle
 |hep      | rpq    | 16           | 66.8810 | [fig](./parallel_col_1.png) |
 |hep      | pq     | 16           | halted  |  |
 |hep      | rpq    | 32           | 57.9    | [fig](./parallel_col_1.png) |
-|hep      | pq     | 32           | halted  |  |
+|hep      | pq     | 32           | halted  |  | -->
 
 ## dask dataset api experiments (parallel col), 8th 4 osd, 200 32MB files, 1 row group, 100%
 
@@ -79,9 +79,97 @@ The `pq.read_table` uses Dataset API under the covers and always set the paralle
 |hep      | rpq    | 32           | 68.636  | [fig](https://snapshot.raintank.io/dashboard/snapshot/dTMBqNbujLwGdJjled7LpKn6Uuzu1boU) |
 |hep      | pq     | 32           | 135.286 | [fig](https://snapshot.raintank.io/dashboard/snapshot/KNBHkQ9rSnBaXLdKh1oUjti14t2ej0dx)                            |
 
+<!-- 
 ## coffea experiments, 4 osd, 2.5%
 
 |format | time | cpu |
 |----|-----|----|
 | pq | 103s | [dask_pq](./dask_pq.png) |
-| rpq | 122s | [dask_rpq](./dask_rpq.png) |
+| rpq | 122s | [dask_rpq](./dask_rpq.png) | -->
+
+<!-- 
+
+root@node0:/users/noobjc# python3 auto_dask.py rpq 100 1 /mnt/cephfs/hep 16
+sh: 1: ./clean_cache.sh: not found
+failed to clean cache
+rpq_100 =  [68.78115510940552]
+root@node0:/users/noobjc# python3 auto_dask.py rpq 1 1 /mnt/cephfs/hep 16
+sh: 1: ./clean_cache.sh: not found
+failed to clean cache
+rpq_1 =  [68.8463454246521]
+root@node0:/users/noobjc# python3 auto_dask.py rpq 100 1 /mnt/cephfs/nyc 16
+sh: 1: ./clean_cache.sh: not found
+failed to clean cache
+rpq_100 =  [37.88982152938843]
+root@node0:/users/noobjc# python3 auto_dask.py rpq 10 1 /mnt/cephfs/nyc 16
+sh: 1: ./clean_cache.sh: not found
+failed to clean cache
+rpq_10 =  [40.1590256690979]
+ -->
+<!-- 
+# selectivity experiments with the dataset api
+root@node0:/users/noobjc# python3 auto.py rpq 100 1 /mnt/cephfs/nyc 16
+sh: 1: ./clean_cache.sh: not found
+failed to clean cache
+
+
+rpq_100 =  [48.27032995223999]
+root@node0:/users/noobjc# 
+root@node0:/users/noobjc# 
+root@node0:/users/noobjc# 
+root@node0:/users/noobjc# 
+root@node0:/users/noobjc# 
+root@node0:/users/noobjc# python3 auto.py rpq 1 1 /mnt/cephfs/nyc 16
+
+sh: 1: ./clean_cache.sh: not found
+failed to clean cache
+rpq_1 =  [34.24758434295654]
+root@node0:/users/noobjc# 
+root@node0:/users/noobjc# python3 auto.py rpq 100 1 /mnt/cephfs/hep 16
+sh: 1: ./clean_cache.sh: not found
+failed to clean cache
+
+
+
+
+
+rpq_100 =  [131.3959321975708]
+root@node0:/users/noobjc# 
+root@node0:/users/noobjc# 
+root@node0:/users/noobjc# 
+root@node0:/users/noobjc# 
+root@node0:/users/noobjc# 
+root@node0:/users/noobjc# nano 
+
+
+
+root@node0:/users/noobjc# nano auto.py
+root@node0:/users/noobjc# nano auto_dask.py
+root@node0:/users/noobjc# nano auto.py
+root@node0:/users/noobjc# 
+root@node0:/users/noobjc# python3 auto.py rpq 1 1 /mnt/cephfs/hep 16
+sh: 1: ./clean_cache.sh: not found
+failed to clean cache
+
+
+rpq_1 =  [130.7544240951538]
+root@node0:/users/noobjc# 
+
+
+root@node0:/users/noobjc# python3 auto_dask.py pq 100 1 /mnt/cephfs/hepsmall 16
+
+sh: 1: ./clean_cache.sh: not found
+failed to clean cache
+pq_100 =  [27.23758578300476]
+root@node0:/users/noobjc# 
+root@node0:/users/noobjc# python3 auto_dask.py rpq 100 1 /mnt/cephfs/hepsmall 16
+sh: 1: ./clean_cache.sh: not found
+failed to clean cache
+rpq_100 =  [30.9129741191864]
+root@node0:/users/noobjc# nano auto_dask.py
+root@node0:/users/noobjc# 
+root@node0:/users/noobjc# python3 auto_dask.py rpq 100 1 /mnt/cephfs/hepsmall 16
+sh: 1: ./clean_cache.sh: not found
+failed to clean cache
+rpq_100 =  [18.180790901184082]
+distributed.worker - WARNING - Heartbeat to scheduler failed -->
