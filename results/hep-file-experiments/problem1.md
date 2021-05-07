@@ -60,6 +60,19 @@ The `pq.read_table` uses Dataset API under the covers and always set the paralle
 |hep      | rpq    | 32           | 57.9    | [fig](./parallel_col_1.png) |
 |hep      | pq     | 32           | halted  |  |
 
+## dask dataset api experiments (parallel col), 8th 4 osd, 200 32MB files, 1 row group, 100%
+
+| dataset | format |  parallelism | time (s)|  cpu                        |
+|---------|--------|--------------|---------|-----------------------------|
+|nyc      | rpq    | 16           |  37.553 | [fig](https://snapshot.raintank.io/dashboard/snapshot/dTMBqNbujLwGdJjled7LpKn6Uuzu1boU) |
+|nyc      | pq     | 16           |         |                             |
+|nyc      | rpq    | 32           |  37.289 | [fig](https://snapshot.raintank.io/dashboard/snapshot/dTMBqNbujLwGdJjled7LpKn6Uuzu1boU) |
+|nyc      | pq     | 32           |         |                             |
+|hep      | rpq    | 16           | 68.759  | [fig](https://snapshot.raintank.io/dashboard/snapshot/dTMBqNbujLwGdJjled7LpKn6Uuzu1boU) |
+|hep      | pq     | 16           |         |                             |
+|hep      | rpq    | 32           | 68.636  | [fig](https://snapshot.raintank.io/dashboard/snapshot/dTMBqNbujLwGdJjled7LpKn6Uuzu1boU) |
+|hep      | pq     | 32           |         |                             |
+
 ## coffea experiments, 4 osd, 2.5%
 
 |format | time | cpu |
