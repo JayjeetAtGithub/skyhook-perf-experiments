@@ -1,7 +1,6 @@
 # parallel col reads
 
-64, 4, all col
-
+# 4 nodes, 16 threads
 pq_100 =  [169.31381392478943], 16900
 pq_10 =  [173.97771668434143], 17300
 pq_1 =  [169.28874731063843], 16900
@@ -27,7 +26,7 @@ https://snapshot.raintank.io/dashboard/snapshot/VnO6ildKm58w8CcrbtVbKKfgRvW3EmLp
 # with compressed IPC
 https://snapshot.raintank.io/dashboard/snapshot/elkh8z8XFjeizmmLpbIMD0Ht4h4wTMd1
 
-# 16 threads
+# 4nodes, 16 threads
 pq_100 =  [169.31381392478943], 16900
 pq_10 =  [173.97771668434143], 17300
 pq_1 =  [169.28874731063843], 16900
@@ -36,7 +35,7 @@ rpq_100 =  [174.17989826202393], 20880
 rpq_10 =  [141.7854504585266], 14805
 rpq_1 =  [138.37220549583435], 13800
 
-# 32  threads
+# 4nodes, 32  threads
 pq_100 =  [169.31381392478943], 16900
 pq_10 =  [173.97771668434143], 17300
 pq_1 =  [169.28874731063843], 16900
@@ -45,9 +44,8 @@ rpq_100 =  [119.76542687416077], 22800
 rpq_10 =  [109.3260645866394], 16350
 rpq_1 =  [101.32788705825806], 15150
 
-
 # with compressed ipc and parallel col reads
-# 16 threads
+# 4nodes, 16 threads
 rpq_100 =  [114.18088865280151]
 rpq_10 =  [99.59617829322815]
 rpq_1 =  [91.26423788070679]
@@ -58,7 +56,7 @@ pq_1 =  [164.15802764892578]
 
 https://snapshot.raintank.io/dashboard/snapshot/6iWxDH9QQGqg21CMvTZK7mcfza724sNA
 
-# 32 threads
+# 4nodes, 32 threads
 rpq_100 =  [87.96266913414001]
 rpq_10 =  [78.59735345840454]
 rpq_1 =  [71.46198916435242]
@@ -68,3 +66,16 @@ pq_10 =  [169.77016758918762]
 pq_1 =  [178.860684633255]
 
 https://snapshot.raintank.io/dashboard/snapshot/anD2RZT604rhFh3TcCDX5eio1oAE852I
+
+# 8nodes, 32 threads
+
+rpq_100 =  [48.247928857803345]
+rpq_10 =  [44.07040047645569]
+rpq_1 =  [40.30939745903015]
+
+pq_10 =  [172.31257677078247]
+pq_1 =  [167.01788663864136]
+pq_100 =  [165.22672295570374]
+
+https://snapshot.raintank.io/dashboard/snapshot/ty93m109nteSvXrlOu5AxE7dcHwIoo26
+
