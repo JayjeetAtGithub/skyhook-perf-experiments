@@ -79,3 +79,14 @@ pq_100 =  [165.22672295570374]
 
 https://snapshot.raintank.io/dashboard/snapshot/ty93m109nteSvXrlOu5AxE7dcHwIoo26
 
+# with compressed ipc and parallel col reads (serial decompression)
+https://snapshot.raintank.io/dashboard/snapshot/bP11BQXhG7qNXrikZ6eA5hlf7s2LhD8w
+
+rpq_1 =  [90.89016819000244, 93.37900733947754]
+rpq_10 =  [100.7161123752594, 101.23686504364014]
+rpq_100 = [120.90371131896973, 120.5435881614685]
+
+pq_1 = [169.7277648448944, 170.35666847229004, 169.1531994342804]
+pq_10 =  [173.94640135765076, 173.55466628074646]
+pq_100 =  [168.91482257843018, 169.06104135513306]
+
