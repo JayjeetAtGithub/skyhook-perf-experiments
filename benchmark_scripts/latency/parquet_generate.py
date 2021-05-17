@@ -24,21 +24,18 @@ if __name__ == "__main__":
     parser.add_argument('--rows', type=int, help='the number of rows')
     parser.add_argument('--cols', type=int, help='the number of columns')
     parser.add_argument('--num', type=int, help='the number of files')
+    parser.add_argument('--path', type=str, help='the path to generate the dataset at', default='dataset')
     args = parser.parse_args()
 
-    shutil.rmtree('dataset', ignore_errors=True)
-    os.makedirs('dataset', exist_ok=True)
-
-    rows = args.rows
-    cols = args.cols
-    num = args.num
-    
-    if rows == None or cols == None or num == None:
+    if args.rows == None or args.cols == None or args.num == None or args.path == '':
         print('usage: python3 parquet_generate.py --rows 10 --cols 10 --num 5')
         sys.exit(1)
 
-    for i in range(num):
+    shutil.rmtree(args.path, ignore_errors=True)
+    os.makedirs(args.path, exist_ok=True)
+
+    for i in range(args.num):
         filename = f"dataset.{i}.parquet"
-        generate_file(os.path.join("dataset", filename), rows, cols)    
+        generate_file(os.path.join(args.path, filename), args.rows, args.cols)    
 
     print('dataset generated')
