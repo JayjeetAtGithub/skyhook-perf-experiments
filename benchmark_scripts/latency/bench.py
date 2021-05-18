@@ -10,6 +10,13 @@ import multiprocessing as mp
 from concurrent.futures import ThreadPoolExecutor
 import json
 
+
+def drop_caches():
+    os.system('sync')
+    os.system('echo 3 > /proc/sys/vm/drop_caches')
+    os.system('sync')
+
+
 def do_scan(scan_task):
     it = scan_task.execute()
     for batch in it:
@@ -38,9 +45,7 @@ if __name__ == "__main__":
     for per in selectivity:
         data[per] = list()
         for i in range(iterations):
-            e = os.system('./clean.sh')
-            if e != 0:
-            print('failed to clean cache')
+            drop_caches()
             dataset_ = ds.dataset(directory, format=format_)
             start = time.time()
 
