@@ -63,5 +63,6 @@ if __name__ == "__main__":
             end = time.time()
             data[per].append(end-start)
 
-    with open('result.json', 'w') as fp:
-        json.dump(data, fp)
+            # incrementally write data after every iteration
+            with open('result.json', 'w') as fp:
+                json.dump(data, fp)
