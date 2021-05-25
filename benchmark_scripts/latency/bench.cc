@@ -1,7 +1,7 @@
 #include <arrow/api.h>
 #include <arrow/dataset/dataset.h>
 #include <arrow/dataset/discovery.h>
-#include <arrow/dataset/expression.h>
+#include <arrow/compute/exec/expression.h>
 #include <arrow/dataset/file_base.h>
 #include <arrow/dataset/file_parquet.h>
 #include <arrow/dataset/file_rados_parquet.h>
@@ -25,6 +25,8 @@ namespace fs = arrow::fs;
 
 namespace ds = arrow::dataset;
 
+namespace compute = arrow::compute;
+
 #define ABORT_ON_FAILURE(expr)                     \
   do {                                             \
     arrow::Status status_ = (expr);                \
@@ -38,13 +40,13 @@ struct Configuration {
   size_t repeat = 1;
   bool use_threads = true;
 
-  ds::Expression filter_1 =
-      ds::greater(ds::field_ref("total_amount"), ds::literal(69.0f));
+  compute::Expression filter_1 =
+      compute::greater(compute::field_ref("total_amount"), compute::literal(69.0f));
 
-  ds::Expression filter_10 =
-      ds::greater(ds::field_ref("total_amount"), ds::literal(27.0f));
+  compute::Expression filter_10 =
+      compute::greater(compute::field_ref("total_amount"), compute::literal(27.0f));
 
-  ds::Expression filter_100 = ds::literal(true);
+  compute::Expression filter_100 = compute::literal(true);
 
   ds::InspectOptions inspect_options{};
   ds::FinishOptions finish_options{};
@@ -133,7 +135,7 @@ std::shared_ptr<ds::Dataset> GetDatasetFromPath(
 }
 
 std::shared_ptr<ds::Scanner> GetScannerFromDataset(std::shared_ptr<ds::Dataset> dataset,
-                                                   ds::Expression filter,
+                                                   compute::Expression filter,
                                                    bool use_threads) {
   auto scanner_builder = dataset->NewScan().ValueOrDie();
 
@@ -171,7 +173,7 @@ int main(int argc, char** argv) {
 
   auto dataset = GetDatasetFromPath(fs, format, path);
 
-  ds::Expression filter_;
+  compute::Expression filter_;
   if (selectivity == "100") {
     filter_ = conf.filter_100;
   } else if (selectivity == "10") {
@@ -186,7 +188,7 @@ int main(int argc, char** argv) {
   auto table = GetTableFromScanner(scanner);
   auto t2 = high_resolution_clock::now();
   duration<double, std::milli> ms_double = t2 - t1;
-  std::cout << "Tima taken:" << ms_double.count() << "ms\n";
+  std::cout << "Time taken:" << ms_double.count() << "ms\n";
   std::cout << "Rows Read: " << table->num_rows() << "\n";
   std::cout << "Columns Read: " << table->num_columns() << "\n";
 
