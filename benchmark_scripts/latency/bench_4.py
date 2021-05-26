@@ -17,10 +17,8 @@ def drop_caches():
     os.system('sync')
 
 
-def do_scan(scan_task):
-    it = scan_task.execute()
-    for batch in it:
-       batch.num_rows
+def do_scan(fragment, filter_):
+    fragment.to_table(filter=filter_, use_threads=False)
 
 
 if __name__ == "__main__":
@@ -57,8 +55,8 @@ if __name__ == "__main__":
                 filter_ = (ds.field("total_amount") > 69)
 
             with ThreadPoolExecutor(max_workers=workers) as executor:
-                    for scan_task in dataset_.scan(filter=filter_):
-                            future = executor.submit(do_scan, scan_task)
+                    for fragment in dataset_.get_fragments(filter=filter_):
+                            future = executor.submit(do_scan, fragment, filter_)
 
             end = time.time()
             data[per].append(end-start)
